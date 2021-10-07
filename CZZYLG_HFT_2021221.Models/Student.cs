@@ -19,10 +19,10 @@ namespace CZZYLG_HFT_2021221.Models
         public string Name { get; set; }
 
         [NotMapped] // NAVIGATION PROPERTY
-        public virtual Course Course { get; set; }
+        public virtual Class Class { get; set; }
 
-        [ForeignKey(nameof(Course))]
-        public int CourseId { get; set; }
+        [ForeignKey(nameof(Class))]
+        public int ClassId { get; set; }
 
     }
 }

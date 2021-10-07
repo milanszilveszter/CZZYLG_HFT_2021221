@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Models
 {
-    [Table("Courses")]
-    public class Course
+    [Table("Classes")]
+    public class Class
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CourseId { get; set; }
+        public int ClassId { get; set; }
 
         [Required]
-        public string CourseName { get; set; }
+        public string ClassName { get; set; }
 
         [ForeignKey(nameof(Teacher))] 
         public int TeacherId { get; set; }
@@ -27,7 +27,7 @@ namespace CZZYLG_HFT_2021221.Models
         [NotMapped] // REVERSE NAVIGATION PROPERTY
         public virtual ICollection<Student> Students { get; set; }
 
-        public Course()
+        public Class()
         {
             Students = new HashSet<Student>();
         }

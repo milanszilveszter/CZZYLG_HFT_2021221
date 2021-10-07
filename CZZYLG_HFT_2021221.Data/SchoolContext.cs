@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Data
 {
-    public class UniversityContext : DbContext
+    public class SchoolContext : DbContext
     {
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
 
-        public UniversityContext()
+        public SchoolContext()
         {
             Database.EnsureCreated();
         }
 
-        public UniversityContext(DbContextOptions<UniversityContext> options)
+        public SchoolContext(DbContextOptions<SchoolContext> options)
            : base(options)
         {
         }
@@ -30,7 +30,6 @@ namespace CZZYLG_HFT_2021221.Data
             {
                 optionsBuilder.
                     UseLazyLoadingProxies().
-                    //UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MyDatabase.mdf;Integrated Security=True");
                     UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
             }
         }
