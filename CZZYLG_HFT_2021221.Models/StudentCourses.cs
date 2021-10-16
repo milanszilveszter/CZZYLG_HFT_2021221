@@ -12,12 +12,12 @@ namespace CZZYLG_HFT_2021221.Models
         [ForeignKey(nameof(Student))]
         public int StudentId { get; set; }
         [NotMapped]
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
 
         [ForeignKey(nameof(Course))]
         public int CourseId { get; set; }
         [NotMapped]
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
     }
 }

@@ -19,20 +19,16 @@ namespace CZZYLG_HFT_2021221.Models
         public string CourseName { get; set; }
 
         [NotMapped]
-        public ICollection<StudentCourses> StudentCourses { get; set; }
+        public virtual ICollection<StudentCourses> StudentCourses { get; set; }
 
+        [ForeignKey(nameof(Teacher))]
+        public int TeacherId { get; set; }
+        [NotMapped]
+        public virtual Teacher Teacher { get; set; }
 
-
-
-        //public Course()
-        //{
-        //    StudentCourses = new HashSet<StudentCourses>();
-        //}
-
-        //[NotMapped] // NAVIGATION PROPERTY
-        //public virtual Teacher Teacher { get; set; }
-
-        //[ForeignKey(nameof(Teacher))] 
-        //public int TeacherId { get; set; }
+        public Course()
+        {
+            StudentCourses = new HashSet<StudentCourses>();
+        }
     }
 }
