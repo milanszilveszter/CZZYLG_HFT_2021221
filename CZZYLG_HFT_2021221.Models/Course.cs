@@ -8,31 +8,31 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Models
 {
-    [Table("Students")]
-    public class Student
+    [Table("Courses")]
+    public class Course
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StudentId { get; set; }
+        public int CourseId { get; set; }
 
         [Required]
-        public string Name { get; set; }  
+        public string CourseName { get; set; }
 
         [NotMapped]
         public ICollection<StudentCourses> StudentCourses { get; set; }
 
 
 
-        //[NotMapped]
-        //public virtual Course Course { get; set; }
 
-        //[ForeignKey(nameof(Course))]
-        //public int CourseId { get; set; }
-
-        //[ForeignKey(nameof(Teacher))]
-        //public int TeacherId { get; set; }
+        //public Course()
+        //{
+        //    StudentCourses = new HashSet<StudentCourses>();
+        //}
 
         //[NotMapped] // NAVIGATION PROPERTY
         //public virtual Teacher Teacher { get; set; }
+
+        //[ForeignKey(nameof(Teacher))] 
+        //public int TeacherId { get; set; }
     }
 }

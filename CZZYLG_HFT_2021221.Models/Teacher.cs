@@ -18,15 +18,18 @@ namespace CZZYLG_HFT_2021221.Models
         [Required]
         public string Name { get; set; }
 
-        [ForeignKey(nameof(Classes))] // IDEGEN KULCS
+        [ForeignKey(nameof(Courses))] // IDEGEN KULCS
         public int CourseId { get; set; }
 
         [NotMapped] // REVERSE NAVIGATION PROPERTY
-        public virtual ICollection<Class> Classes { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
+
+        [NotMapped] // REVERSE NAVIGATION PROPERTY
+        public virtual ICollection<Student> Students { get; set; }
 
         public Teacher()
         {
-            Classes = new HashSet<Class>();
+            Courses = new HashSet<Course>();
         }
     }
 }
