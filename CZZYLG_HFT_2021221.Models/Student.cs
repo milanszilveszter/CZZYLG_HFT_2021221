@@ -26,15 +26,11 @@ namespace CZZYLG_HFT_2021221.Models
         public virtual Teacher Teacher { get; set; }
 
         [NotMapped]
-        public ICollection<Teacher> Teachers { get; set; }
-
-        [NotMapped]
         public virtual ICollection<StudentCourses> StudentCourses { get; set; }
 
         public Student()
         {
             StudentCourses = new HashSet<StudentCourses>();
-            Teachers = new HashSet<Teacher>();
         }
 
     }

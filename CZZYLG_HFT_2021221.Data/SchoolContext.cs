@@ -69,7 +69,8 @@ namespace CZZYLG_HFT_2021221.Data
             {
                 entity.HasOne(t => t.Course)
                     .WithOne(c => c.Teacher)
-                    .HasForeignKey<Course>(c => c.TeacherId);
+                    .HasForeignKey<Course>(c => c.TeacherId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             Teacher t1 = new Teacher() { TeacherId = 1, Name = "Kovács András" };
