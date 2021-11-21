@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Logic
 {
-    class TeacherLogic : ITeacherLogic
+    public class TeacherLogic : ITeacherLogic
     {
         ITeacherRepository repo;
 
