@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Logic
 {
-    interface ICourseLogic
+    public interface ICourseLogic
     {
         void Create(Course course);
         IQueryable<Course> ReadAll();
