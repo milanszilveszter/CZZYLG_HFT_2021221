@@ -9,10 +9,10 @@ namespace CZZYLG_HFT_2021221.Repository
 {
     interface IStudentRepository
     {
-        public void Create(Student course);
-        public Student ReadOne(int id);
-        public IQueryable<Student> ReadAll();
-        public void Update(Student course);
-        public void Delete(int courseId);
+        void Create(Student course);
+        Student ReadOne(int id);
+        IQueryable<Student> ReadAll();
+        void Update(Student course);
+        void Delete(int courseId);
     }
 }

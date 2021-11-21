@@ -9,10 +9,10 @@ namespace CZZYLG_HFT_2021221.Repository
 {
     interface ICourseRepository
     {
-        public void Create(Course course);
-        public Course ReadOne(int id);
-        public IQueryable<Course> ReadAll();
-        public void Update(Course course);
-        public void Delete(int courseId);
+        void Create(Course course);
+        Course ReadOne(int id);
+        IQueryable<Course> ReadAll();
+        void Update(Course course);
+        void Delete(int courseId);
     }
 }
