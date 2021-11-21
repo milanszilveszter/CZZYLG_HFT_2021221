@@ -17,6 +17,11 @@ namespace CZZYLG_HFT_2021221.Logic
             this.repo = repo;
         }
 
+        public int CoursesCount()
+        {
+            return repo.ReadAll().Count();
+        }    
+
         public void Create(Course course)
         {
             repo.Create(course);

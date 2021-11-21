@@ -13,5 +13,9 @@ namespace CZZYLG_HFT_2021221.Logic
         IQueryable<Teacher> ReadAll();
         void Update(Teacher teacher);
         void Delete(int teacherId);
+
+        double AgeAverage();
+
+        IEnumerable<Teacher> MostStudentsWithAvgGt3();
     }
 }

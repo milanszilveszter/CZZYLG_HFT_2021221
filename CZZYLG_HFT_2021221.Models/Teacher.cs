@@ -18,6 +18,9 @@ namespace CZZYLG_HFT_2021221.Models
         [Required]
         public string Name { get; set; }
 
+        [Required]
+        public int Age { get; set; }
+
         [NotMapped]
         public virtual ICollection<Student> Students { get; set; }
 

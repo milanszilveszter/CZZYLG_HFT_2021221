@@ -73,9 +73,9 @@ namespace CZZYLG_HFT_2021221.Data
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            Teacher t1 = new Teacher() { TeacherId = 1, Name = "Kovács András" };
-            Teacher t2 = new Teacher() { TeacherId = 2, Name = "Szőke Magdolna" };
-            Teacher t3 = new Teacher() { TeacherId = 3, Name = "Vajda István" };
+            Teacher t1 = new Teacher() { TeacherId = 1, Name = "Kovács András" , Age = 28};
+            Teacher t2 = new Teacher() { TeacherId = 2, Name = "Szőke Magdolna", Age = 43 };
+            Teacher t3 = new Teacher() { TeacherId = 3, Name = "Vajda István", Age = 46 };
 
             Course c1 = new Course() { CourseId = 1, CourseName = "Haladó Fejlesztési Technikák", TeacherId = t1.TeacherId };
             Course c2 = new Course() { CourseId = 2, CourseName = "Diszkrét Matematika és Lineáris Algebra I.", TeacherId = t2.TeacherId };

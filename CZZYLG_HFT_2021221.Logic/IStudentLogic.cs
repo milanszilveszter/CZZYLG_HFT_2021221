@@ -16,7 +16,6 @@ namespace CZZYLG_HFT_2021221.Logic
 
         float AllGradesAverage();
 
-        IEnumerable<KeyValuePair<string, int>>
-            StudentCountByTeacher();
+        IEnumerable<KeyValuePair<string, int>>StudentCountByTeacher();
     }
 }

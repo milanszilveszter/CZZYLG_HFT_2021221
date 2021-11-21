@@ -17,6 +17,19 @@ namespace CZZYLG_HFT_2021221.Logic
             this.repo = repo;
         }
 
+        public double AgeAverage()
+        {
+            return repo.ReadAll().Average(x => x.Age);
+        }
+
+        public IEnumerable<Teacher> MostStudentsWithAvgGt3()
+        {
+            return (IEnumerable<Teacher>)repo
+                .ReadAll()
+                .Select(x => x.Students
+                    .Where(s => s.GradeAvg >= 3f));
+        }
+
         public void Create(Teacher teacher)
         {
             repo.Create(teacher);

@@ -13,5 +13,7 @@ namespace CZZYLG_HFT_2021221.Logic
         IQueryable<Course> ReadAll();
         void Update(Course course);
         void Delete(int courseId);
+
+        int CoursesCount();
     }
 }
