@@ -9,10 +9,10 @@ namespace CZZYLG_HFT_2021221.Logic
 {
     interface IStudentLogic
     {
-        void Create(Student course);
+        void Create(Student student);
         IQueryable<Student> ReadAll();
-        void Update(Student course);
-        void Delete(int courseId);
+        void Update(Student student);
+        void Delete(int studentId);
 
         float AllGradesAverage();
 
