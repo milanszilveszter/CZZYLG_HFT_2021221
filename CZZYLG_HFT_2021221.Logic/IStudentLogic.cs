@@ -14,6 +14,6 @@ namespace CZZYLG_HFT_2021221.Logic
         void Update(Student course);
         void Delete(int courseId);
 
-        double AverageGrade();
+        double AllGradesAverage();
     }
 }
