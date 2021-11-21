@@ -1,4 +1,5 @@
 ﻿using CZZYLG_HFT_2021221.Models;
+using CZZYLG_HFT_2021221.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,35 @@ namespace CZZYLG_HFT_2021221.Logic
 {
     class StudentLogic : IStudentLogic
     {
-        public double AllGradesAverage()
+        IStudentRepository repo;
+
+        public StudentLogic(IStudentRepository repo)
         {
-            throw new NotImplementedException();
+            this.repo = repo;
         }
 
-        public void Create(Student course)
+        public float AllGradesAverage()
         {
-            throw new NotImplementedException();
+            return repo
+                .ReadAll()
+                .Average(s => s.GradeAvg);
         }
 
-        public void Delete(int courseId)
+        public void Create(Student student)
         {
-            throw new NotImplementedException();
+            repo.Create(student);
         }
-
+        public void Delete(int studentId)
+        {
+            repo.Delete(studentId);
+        }
         public IQueryable<Student> ReadAll()
         {
-            throw new NotImplementedException();
+            return repo.ReadAll();
         }
-
-        public void Update(Student course)
+        public void Update(Student student)
         {
-            throw new NotImplementedException();
+            repo.Update(student);
         }
     }
 }

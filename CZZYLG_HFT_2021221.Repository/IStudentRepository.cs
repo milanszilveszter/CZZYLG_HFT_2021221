@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Repository
 {
-    interface IStudentRepository
+    public interface IStudentRepository
     {
         void Create(Student course);
         Student ReadOne(int id);
