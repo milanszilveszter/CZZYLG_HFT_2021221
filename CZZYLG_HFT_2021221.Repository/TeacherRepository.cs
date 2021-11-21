@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Repository
 {
-    public class TeacherRepository
+    public class TeacherRepository : ITeacherRepository
     {
         SchoolContext context;
 
