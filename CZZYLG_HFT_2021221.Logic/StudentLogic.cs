@@ -24,6 +24,15 @@ namespace CZZYLG_HFT_2021221.Logic
                 .Average(s => s.GradeAvg);
         }
 
+        public IEnumerable<KeyValuePair<string, int>>StudentCountByTeacher()
+        {
+            return repo
+                 .ReadAll()
+                 .GroupBy(x => x.Teacher)
+                 .Select(x => new KeyValuePair<string, int>(
+                     x.Key.Name, x.Count()));
+        }
+
         public void Create(Student student)
         {
             repo.Create(student);

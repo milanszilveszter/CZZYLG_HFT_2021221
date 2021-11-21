@@ -15,5 +15,8 @@ namespace CZZYLG_HFT_2021221.Logic
         void Delete(int courseId);
 
         float AllGradesAverage();
+
+        IEnumerable<KeyValuePair<string, int>>
+            StudentCountByTeacher();
     }
 }
