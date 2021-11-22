@@ -26,9 +26,9 @@ namespace CZZYLG_HFT_2021221.Models
         [NotMapped]
         public virtual Teacher Teacher { get; set; }
 
-        public Course()
-        {
-            StudentCourses = new HashSet<StudentCourses>();
-        }
+        //public Course()
+        //{
+        //    StudentCourses = new HashSet<StudentCourses>();
+        //}
     }
 }

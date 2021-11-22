@@ -11,61 +11,59 @@ namespace CZZYLG_HFT_2021221.Test
     [TestFixture]
     class StudentLogicTests
     {
-        IStudentLogic logic;
+        IStudentLogic isl;
 
         [SetUp]
         public void Setup()
         {
-            Mock<IStudentRepository> mockRepo = new Mock<IStudentRepository>();
+            Mock<IStudentRepository> mockStudentRepo = new Mock<IStudentRepository>();
 
-            Teacher t1 = new Teacher() { TeacherId = 1, Name = "Teszt Tanár" , Age = 25};
-            Teacher t2 = new Teacher() { TeacherId = 2, Name = "Teszt Tanár2", Age = 56 };
-
-            mockRepo
+            mockStudentRepo
                 .Setup(x => x.ReadAll())
                 .Returns(new List<Student>
                 {
                     new Student()
                     {
                         Name = "Teszt1",
-                        TeacherId = t1.TeacherId,
-                        GradeAvg = 3.2f  
+                        TeacherId = 1,
+                        GradeAvg = 3.2f
                     },
                     new Student()
                     {
                         Name = "Teszt2",
-                        TeacherId = t2.TeacherId,
+                        TeacherId = 2,
                         GradeAvg = 4f
                     },
                     new Student()
                     {
                         Name = "Teszt3",
-                        TeacherId = t1.TeacherId,
+                        TeacherId = 3,
                         GradeAvg = 2.6f
                     },
                     new Student()
                     {
                         Name = "Teszt4",
-                        TeacherId = t2.TeacherId,
+                        TeacherId = 4,
                         GradeAvg = 1.2f
                     },
 
                 }.AsQueryable());
 
-            logic = new StudentLogic(mockRepo.Object);
+            isl = new StudentLogic(mockStudentRepo.Object);
         }
 
         [Test]
         public void Test1()
         {
-            double avg = logic.AllGradesAverage();
+            double avg = isl.AllGradesAverage();
 
             Assert.That(avg, Is.EqualTo(2.75f));
         }
 
         [Test]
         public void Test2()
-        {
+        {        
+            Assert.That(() => isl.Create(new Student { StudentId = -1 }), Throws.Exception);
         }
     }
 }

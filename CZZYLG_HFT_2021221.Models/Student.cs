@@ -28,10 +28,10 @@ namespace CZZYLG_HFT_2021221.Models
         [NotMapped]
         public virtual ICollection<StudentCourses> StudentCourses { get; set; }
 
-        public Student()
-        {
-            StudentCourses = new HashSet<StudentCourses>();
-        }
+        //public Student()
+        //{
+        //    StudentCourses = new HashSet<StudentCourses>();
+        //}
 
     }
 }
