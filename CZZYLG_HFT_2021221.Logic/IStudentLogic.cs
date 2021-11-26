@@ -10,12 +10,12 @@ namespace CZZYLG_HFT_2021221.Logic
     public interface IStudentLogic
     {
         void Create(Student student);
-        IQueryable<Student> ReadAll();
+        IEnumerable<Student> ReadAll();
         void Update(Student student);
         void Delete(int studentId);
 
         double AllGradesAverage();
-
-        //IEnumerable<KeyValuePair<string, int>>StudentCountByTeacher();
+        int CoursesCount();
+        IEnumerable<Student> StudentsByCourse(int courseId);
     }
 }

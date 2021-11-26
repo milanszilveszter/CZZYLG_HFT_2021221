@@ -23,15 +23,18 @@ namespace CZZYLG_HFT_2021221.Logic
                 .ReadAll()
                 .Average(s => s.Grade);
         }
-
-        //public IEnumerable<KeyValuePair<string, int>>StudentCountByTeacher()
-        //{
-        //    return repo
-        //         .ReadAll()
-        //         .GroupBy(x => x.Teacher)
-        //         .Select(x => new KeyValuePair<string, int>(
-        //             x.Key.Name, x.Count()));
-        //}
+        public int CoursesCount()
+        {
+            return repo.ReadAll()
+                .Sum(x => x.StudentCourses.Count());
+        }
+        public IEnumerable<Student> StudentsByCourse(int courseId)
+        {
+            return repo.ReadAll()
+                .SelectMany(x => x.StudentCourses)
+                .Where(x => x.CourseId == courseId)
+                .Select(x => x.Student).AsEnumerable();
+        }
 
         public void Create(Student student)
         {
@@ -49,7 +52,7 @@ namespace CZZYLG_HFT_2021221.Logic
         {
             repo.Delete(studentId);
         }
-        public IQueryable<Student> ReadAll()
+        public IEnumerable<Student> ReadAll()
         {
             return repo.ReadAll();
         }

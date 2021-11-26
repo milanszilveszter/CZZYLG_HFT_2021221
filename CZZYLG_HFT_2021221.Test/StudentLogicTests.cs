@@ -25,26 +25,42 @@ namespace CZZYLG_HFT_2021221.Test
                     new Student()
                     {
                         Name = "Teszt1",
-                        //TeacherId = 1,
-                        Grade = 3.2f
+                        Grade = 3.2,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { CourseId = 1 },
+                            new StudentCourses() { CourseId = 2 }
+                        }
                     },
                     new Student()
                     {
                         Name = "Teszt2",
-                        //TeacherId = 2,
-                        Grade = 4f
+                        Grade = 4,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { CourseId = 1 },
+                            new StudentCourses() { CourseId = 2 },
+                            new StudentCourses() { CourseId = 3 }
+                        }
                     },
                     new Student()
                     {
                         Name = "Teszt3",
-                        //TeacherId = 3,
-                        Grade = 2.6f
+                        Grade = 2.6,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { CourseId = 2 }
+                        }
                     },
                     new Student()
                     {
                         Name = "Teszt4",
-                        //TeacherId = 4,
-                        Grade = 1.2f
+                        Grade = 1.2,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { CourseId = 2 },
+                            new StudentCourses() { CourseId = 3 }
+                        }
                     },
 
                 }.AsQueryable());
@@ -55,23 +71,25 @@ namespace CZZYLG_HFT_2021221.Test
         [Test]
         public void Test1()
         {
-            double avg = isl.AllGradesAverage();
+            Assert.That(isl.AllGradesAverage(), Is.EqualTo(2.75f));
+        }
 
-            Assert.That(avg, Is.EqualTo(2.75f));
+        [Test]
+        public void CoursesCountTest()
+        {
+            Assert.That(isl.CoursesCount(), Is.EqualTo(8));
         }
 
         [Test]
         public void CreateTest()
-        {        
+        {
             Assert.That(() => isl.Create(new Student { }), Throws.Exception);
         }
 
-        //[Test]
-        //public void StudentCountByTeacherTests()
-        //{
-        //    var a = isl.StudentCountByTeacher();
-
-        //    Assert.That(isl.StudentCountByTeacher(), Is.Not.Null);
-        //}
+        [Test]
+        public void StudentsByCourseTest()
+        {
+            Assert.That(isl.StudentsByCourse(2).Count(), Is.EqualTo(4));
+        }
     }
 }
