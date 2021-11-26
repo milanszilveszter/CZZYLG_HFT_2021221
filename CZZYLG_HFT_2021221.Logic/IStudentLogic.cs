@@ -14,8 +14,8 @@ namespace CZZYLG_HFT_2021221.Logic
         void Update(Student student);
         void Delete(int studentId);
 
-        float AllGradesAverage();
+        double AllGradesAverage();
 
-        IEnumerable<KeyValuePair<string, int>>StudentCountByTeacher();
+        //IEnumerable<KeyValuePair<string, int>>StudentCountByTeacher();
     }
 }

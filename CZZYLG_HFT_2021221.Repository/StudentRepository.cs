@@ -37,8 +37,7 @@ namespace CZZYLG_HFT_2021221.Repository
             Student old = ReadOne(student.StudentId);
 
             old.Name = student.Name;
-            old.TeacherId = student.TeacherId;
-            old.GradeAvg = student.GradeAvg;
+            old.Grade = student.Grade;
 
             context.SaveChanges();
         }

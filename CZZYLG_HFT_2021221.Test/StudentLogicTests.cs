@@ -25,26 +25,26 @@ namespace CZZYLG_HFT_2021221.Test
                     new Student()
                     {
                         Name = "Teszt1",
-                        TeacherId = 1,
-                        GradeAvg = 3.2f
+                        //TeacherId = 1,
+                        Grade = 3.2f
                     },
                     new Student()
                     {
                         Name = "Teszt2",
-                        TeacherId = 2,
-                        GradeAvg = 4f
+                        //TeacherId = 2,
+                        Grade = 4f
                     },
                     new Student()
                     {
                         Name = "Teszt3",
-                        TeacherId = 3,
-                        GradeAvg = 2.6f
+                        //TeacherId = 3,
+                        Grade = 2.6f
                     },
                     new Student()
                     {
                         Name = "Teszt4",
-                        TeacherId = 4,
-                        GradeAvg = 1.2f
+                        //TeacherId = 4,
+                        Grade = 1.2f
                     },
 
                 }.AsQueryable());
@@ -61,9 +61,17 @@ namespace CZZYLG_HFT_2021221.Test
         }
 
         [Test]
-        public void Test2()
+        public void CreateTest()
         {        
-            Assert.That(() => isl.Create(new Student { StudentId = -1 }), Throws.Exception);
+            Assert.That(() => isl.Create(new Student { }), Throws.Exception);
         }
+
+        //[Test]
+        //public void StudentCountByTeacherTests()
+        //{
+        //    var a = isl.StudentCountByTeacher();
+
+        //    Assert.That(isl.StudentCountByTeacher(), Is.Not.Null);
+        //}
     }
 }

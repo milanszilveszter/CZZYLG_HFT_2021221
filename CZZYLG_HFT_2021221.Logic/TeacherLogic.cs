@@ -27,12 +27,20 @@ namespace CZZYLG_HFT_2021221.Logic
             return (IEnumerable<Teacher>)repo
                 .ReadAll()
                 .Select(x => x.Students
-                    .Where(s => s.GradeAvg >= 3f));
+                    .Where(s => s.Grade >= 3f));
         }
 
         public void Create(Teacher teacher)
         {
-            repo.Create(teacher);
+            if (teacher.TeacherId < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                repo.Create(teacher);
+            }
+
         }
         public void Delete(int teacherId)
         {
@@ -44,7 +52,14 @@ namespace CZZYLG_HFT_2021221.Logic
         }
         public void Update(Teacher teacher)
         {
-            repo.Update(teacher);
+            if (teacher.TeacherId < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                repo.Update(teacher);
+            }
         }
     }
 }

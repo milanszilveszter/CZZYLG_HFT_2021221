@@ -62,9 +62,9 @@ namespace CZZYLG_HFT_2021221.Test
         }
 
         [Test]
-        public void Test2()
+        public void CreateTest()
         {
-            Assert.That(() => itl.Create(new Teacher { TeacherId = -1 }), Throws.Exception);
+            Assert.That(() => itl.Create(new Teacher { }), Throws.Exception);
         }
     }
 }

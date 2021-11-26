@@ -24,7 +24,14 @@ namespace CZZYLG_HFT_2021221.Logic
 
         public void Create(Course course)
         {
-            repo.Create(course);
+            if (course.CourseId < 0 || course.CourseName.Equals(null))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                repo.Create(course);
+            }
         }
         public void Delete(int courseId)
         {
@@ -36,7 +43,14 @@ namespace CZZYLG_HFT_2021221.Logic
         }
         public void Update(Course course)
         {
-            repo.Update(course);
+            if (course.CourseId < 0 || course.CourseName.Equals(null))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                repo.Update(course);
+            }
         }
     }
 }

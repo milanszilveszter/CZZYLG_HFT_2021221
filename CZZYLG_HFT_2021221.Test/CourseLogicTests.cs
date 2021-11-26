@@ -62,9 +62,9 @@ namespace CZZYLG_HFT_2021221.Test
         }
 
         [Test]
-        public void Test2()
+        public void CreateTest()
         {
-            Assert.That(() => icl.Create(new Course { CourseId = -1 }), Throws.Exception);
+            Assert.That(() => icl.Create(new Course { }), Throws.Exception);
         }
     }
 }

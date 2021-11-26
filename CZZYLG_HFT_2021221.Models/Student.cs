@@ -18,20 +18,15 @@ namespace CZZYLG_HFT_2021221.Models
         [Required]
         public string Name { get; set; }
 
-        public float GradeAvg { get; set; }
-
-        [ForeignKey(nameof(Teacher))]
-        public int TeacherId { get; set; }
-        [NotMapped]
-        public virtual Teacher Teacher { get; set; }
+        public double Grade { get; set; }
 
         [NotMapped]
         public virtual ICollection<StudentCourses> StudentCourses { get; set; }
 
-        //public Student()
-        //{
-        //    StudentCourses = new HashSet<StudentCourses>();
-        //}
+        public Student()
+        {
+            StudentCourses = new HashSet<StudentCourses>();
+        }
 
     }
 }

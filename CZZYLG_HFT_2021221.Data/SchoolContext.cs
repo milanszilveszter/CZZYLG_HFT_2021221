@@ -57,19 +57,11 @@ namespace CZZYLG_HFT_2021221.Data
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-
-            modelBuilder.Entity<Student>(entity => {
-                entity.HasOne(s => s.Teacher)
-                    .WithMany(t => t.Students)
-                    .HasForeignKey(s => s.TeacherId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
-            });
-
-            modelBuilder.Entity<Teacher>(entity =>
+            modelBuilder.Entity<Course>(entity =>
             {
-                entity.HasOne(t => t.Course)
-                    .WithOne(c => c.Teacher)
-                    .HasForeignKey<Course>(c => c.TeacherId)
+                entity.HasOne(c => c.Teacher)
+                    .WithOne(t => t.Course)
+                    .HasForeignKey<Teacher>(c => c.TeacherId)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
@@ -81,16 +73,36 @@ namespace CZZYLG_HFT_2021221.Data
             Course c2 = new Course() { CourseId = 2, CourseName = "Diszkrét Matematika és Lineáris Algebra I.", TeacherId = t2.TeacherId };
             Course c3 = new Course() { CourseId = 3, CourseName = "Analízis I.", TeacherId = t3.TeacherId};
 
-            Student s1 = new Student() { StudentId = 1, TeacherId = t1.TeacherId, Name = "Kiss Ádám", GradeAvg = 3.19f};
-            Student s2 = new Student() { StudentId = 2, TeacherId = t1.TeacherId, Name = "Balogh Róbert", GradeAvg = 3.4f };
-            Student s3 = new Student() { StudentId = 3, TeacherId = t2.TeacherId, Name = "Kovács Julianna", GradeAvg = 4.44f };
-            Student s4 = new Student() { StudentId = 4, TeacherId = t2.TeacherId, Name = "Gercse Ábel", GradeAvg = 2.34f };
-            Student s5 = new Student() { StudentId = 5, TeacherId = t3.TeacherId, Name = "Magyar Andor", GradeAvg = 3f };
-            Student s6 = new Student() { StudentId = 6, TeacherId = t3.TeacherId, Name = "Kertész Csaba", GradeAvg = 2.1f };
+            Student s1 = new Student() { StudentId = 1, Name = "Kiss Ádám", Grade = 3.19};
+            Student s2 = new Student() { StudentId = 2, Name = "Balogh Róbert", Grade = 3.4 };
+            Student s3 = new Student() { StudentId = 3, Name = "Kovács Julianna", Grade = 4.44 };
+            Student s4 = new Student() { StudentId = 4, Name = "Gercse Ábel", Grade = 2.34 };
+            Student s5 = new Student() { StudentId = 5, Name = "Magyar Andor", Grade = 3 };
+            Student s6 = new Student() { StudentId = 6, Name = "Kertész Csaba", Grade = 2.1 };
+
+            StudentCourses sc1 = new StudentCourses() { StudentId = s1.StudentId, CourseId = c1.CourseId };
+            StudentCourses sc2 = new StudentCourses() { StudentId = s1.StudentId, CourseId = c2.CourseId };
+
+            StudentCourses sc3 = new StudentCourses() { StudentId = s2.StudentId, CourseId = c1.CourseId };
+            StudentCourses sc4 = new StudentCourses() { StudentId = s2.StudentId, CourseId = c3.CourseId };
+
+            StudentCourses sc5 = new StudentCourses() { StudentId = s3.StudentId, CourseId = c2.CourseId };
+
+            StudentCourses sc6 = new StudentCourses() { StudentId = s4.StudentId, CourseId = c2.CourseId };
+            StudentCourses sc11 = new StudentCourses() { StudentId = s4.StudentId, CourseId = c3.CourseId };
+
+            StudentCourses sc12 = new StudentCourses() { StudentId = s5.StudentId, CourseId = c1.CourseId };
+            StudentCourses sc7 = new StudentCourses() { StudentId = s5.StudentId, CourseId = c2.CourseId };
+            StudentCourses sc13 = new StudentCourses() { StudentId = s5.StudentId, CourseId = c3.CourseId };
+
+            StudentCourses sc8 = new StudentCourses() { StudentId = s6.StudentId, CourseId = c1.CourseId };
+            StudentCourses sc9 = new StudentCourses() { StudentId = s6.StudentId, CourseId = c2.CourseId };
+            StudentCourses sc10 = new StudentCourses() { StudentId = s6.StudentId, CourseId = c3.CourseId };
 
             modelBuilder.Entity<Teacher>().HasData(t1, t2, t3);
             modelBuilder.Entity<Course>().HasData(c1, c2, c3);
-            modelBuilder.Entity<Student>().HasData(s1, s2, s3, s4, s5, s6);             
+            modelBuilder.Entity<Student>().HasData(s1, s2, s3, s4, s5, s6);
+            modelBuilder.Entity<StudentCourses>().HasData(sc1, sc2, sc3, sc4, sc5, sc6, sc7, sc8, sc9, sc10, sc11, sc12, sc13);
         }
     }
 }

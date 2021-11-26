@@ -26,10 +26,11 @@ namespace CZZYLG_HFT_2021221.Models
 
         [NotMapped]
         public virtual Course Course { get; set; }
-        
-        //public Teacher()
-        //{
-        //    Students = new HashSet<Student>();
-        //}
+
+
+        public Teacher()
+        {
+            Students = new HashSet<Student>();
+        }
     }
 }
