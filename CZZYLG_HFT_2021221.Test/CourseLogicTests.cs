@@ -28,25 +28,45 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         CourseId = 1,
                         CourseName = "hft",
-                        TeacherId = 1
+                        TeacherId = 1,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { StudentId = 1 },
+                            new StudentCourses() { StudentId = 2 },
+                        }
                     },
                     new Course
                     {
                         CourseId = 2,
                         CourseName = "villany",
-                        TeacherId = 2
+                        TeacherId = 2,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { StudentId = 1 },
+                            new StudentCourses() { StudentId = 2 },
+                        }
                     },
                     new Course
                     {
                         CourseId = 3,
                         CourseName = "dimat",
-                        TeacherId = 3
+                        TeacherId = 3,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { StudentId = 1 },
+                            new StudentCourses() { StudentId = 2 },
+                        }
                     },
                     new Course
                     {
                         CourseId = 4,
                         CourseName = "adatb",
-                        TeacherId = 4
+                        TeacherId = 4,
+                        StudentCourses = new List<StudentCourses>()
+                        {
+                            new StudentCourses() { StudentId = 1 },
+                            new StudentCourses() { StudentId = 2 },
+                        }
                     },
                 }.AsQueryable()); 
 
@@ -65,6 +85,6 @@ namespace CZZYLG_HFT_2021221.Test
         public void CreateTest()
         {
             Assert.That(() => icl.Create(new Course { }), Throws.Exception);
-        }
+        }   
     }
 }

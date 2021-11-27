@@ -10,7 +10,7 @@ namespace CZZYLG_HFT_2021221.Logic
     public interface ICourseLogic
     {
         void Create(Course course);
-        IQueryable<Course> ReadAll();
+        IEnumerable<Course> ReadAll();
         void Update(Course course);
         void Delete(int courseId);
 

@@ -30,10 +30,15 @@ namespace CZZYLG_HFT_2021221.Logic
         }
         public IEnumerable<Student> StudentsByCourse(int courseId)
         {
-            return repo.ReadAll()
-                .SelectMany(x => x.StudentCourses)
-                .Where(x => x.CourseId == courseId)
-                .Select(x => x.Student).AsEnumerable();
+            return from x in repo.ReadAll()
+                   where x.StudentCourses.Any(x => x.CourseId == courseId)
+                   select x;
+        }
+        public double StudentGradeAvgByCourse(int courseId)
+        { 
+            return (from x in repo.ReadAll()
+                   where x.StudentCourses.Any(x => x.CourseId == courseId)
+                   select x.Grade).Average();
         }
 
         public void Create(Student student)
@@ -47,10 +52,6 @@ namespace CZZYLG_HFT_2021221.Logic
                 repo.Create(student);
             }
 
-        }
-        public void Delete(int studentId)
-        {
-            repo.Delete(studentId);
         }
         public IEnumerable<Student> ReadAll()
         {
@@ -66,6 +67,10 @@ namespace CZZYLG_HFT_2021221.Logic
             {
                 repo.Update(student);
             }
+        }
+        public void Delete(int studentId)
+        {
+            repo.Delete(studentId);
         }
     }
 }

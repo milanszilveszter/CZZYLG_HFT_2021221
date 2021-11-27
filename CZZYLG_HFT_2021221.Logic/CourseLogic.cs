@@ -20,7 +20,7 @@ namespace CZZYLG_HFT_2021221.Logic
         public int CoursesCount()
         {
             return repo.ReadAll().Count();
-        }    
+        }
 
         public void Create(Course course)
         {
@@ -37,7 +37,7 @@ namespace CZZYLG_HFT_2021221.Logic
         {
             repo.Delete(courseId);
         }
-        public IQueryable<Course> ReadAll()
+        public IEnumerable<Course> ReadAll()
         {
             return repo.ReadAll();
         }

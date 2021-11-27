@@ -91,5 +91,11 @@ namespace CZZYLG_HFT_2021221.Test
         {
             Assert.That(isl.StudentsByCourse(2).Count(), Is.EqualTo(4));
         }
+
+        [Test]
+        public void StudentGradeAvgByCourseTest()
+        {
+            Assert.That(isl.StudentGradeAvgByCourse(1), Is.EqualTo(3.6));
+        }
     }
 }

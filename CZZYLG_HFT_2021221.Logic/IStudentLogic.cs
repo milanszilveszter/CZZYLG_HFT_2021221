@@ -17,5 +17,6 @@ namespace CZZYLG_HFT_2021221.Logic
         double AllGradesAverage();
         int CoursesCount();
         IEnumerable<Student> StudentsByCourse(int courseId);
+        double StudentGradeAvgByCourse(int courseId);
     }
 }
