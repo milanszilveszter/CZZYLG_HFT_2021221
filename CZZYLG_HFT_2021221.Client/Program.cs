@@ -6,7 +6,9 @@ namespace CZZYLG_HFT_2021221.Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            System.Threading.Thread.Sleep(8000);
+
+            RestService rest = new RestService("http://localhost:49692");
         }
     }
 }

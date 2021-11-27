@@ -83,7 +83,6 @@ namespace CZZYLG_HFT_2021221.Data
             modelBuilder.Entity<Teacher>().HasData(t1, t2, t3);
             modelBuilder.Entity<Course>().HasData(c1, c2, c3);
             modelBuilder.Entity<Student>().HasData(s1, s2, s3, s4, s5, s6);
-            modelBuilder.Entity<StudentCourses>().HasData(s1.StudentCourses);
         }
     }
 }

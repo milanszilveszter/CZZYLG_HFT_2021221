@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Endpoint.Controllers
 {
-    [Route("controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CourseController : ControllerBase
     {

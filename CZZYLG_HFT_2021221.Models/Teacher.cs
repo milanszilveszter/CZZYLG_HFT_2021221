@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Models
@@ -22,9 +23,11 @@ namespace CZZYLG_HFT_2021221.Models
         public int Age { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Student> Students { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual Course Course { get; set; }
 
 
