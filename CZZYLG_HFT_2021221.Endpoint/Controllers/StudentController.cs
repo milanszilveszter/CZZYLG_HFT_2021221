@@ -22,12 +22,6 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
         }
 
         [HttpGet]
-        public string Test()
-        {
-            return "TEST";
-        }
-
-        [HttpGet]
         public IEnumerable<Student> GetAll()
         {
             return logic.ReadAll();
