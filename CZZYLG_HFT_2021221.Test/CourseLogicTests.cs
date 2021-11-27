@@ -26,7 +26,7 @@ namespace CZZYLG_HFT_2021221.Test
                 {
                     new Course
                     {
-                        CourseId = 1,
+                        Id = 1,
                         CourseName = "hft",
                         TeacherId = 1,
                         StudentCourses = new List<StudentCourses>()
@@ -37,7 +37,7 @@ namespace CZZYLG_HFT_2021221.Test
                     },
                     new Course
                     {
-                        CourseId = 2,
+                        Id = 2,
                         CourseName = "villany",
                         TeacherId = 2,
                         StudentCourses = new List<StudentCourses>()
@@ -48,7 +48,7 @@ namespace CZZYLG_HFT_2021221.Test
                     },
                     new Course
                     {
-                        CourseId = 3,
+                        Id = 3,
                         CourseName = "dimat",
                         TeacherId = 3,
                         StudentCourses = new List<StudentCourses>()
@@ -59,7 +59,7 @@ namespace CZZYLG_HFT_2021221.Test
                     },
                     new Course
                     {
-                        CourseId = 4,
+                        Id = 4,
                         CourseName = "adatb",
                         TeacherId = 4,
                         StudentCourses = new List<StudentCourses>()

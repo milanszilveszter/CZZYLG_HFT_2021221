@@ -43,7 +43,7 @@ namespace CZZYLG_HFT_2021221.Logic
 
         public void Create(Student student)
         {
-            if (student.StudentId < 0 || student.Name.Equals(null))
+            if (student.Id < 0 || student.Name.Equals(null))
             {
                 throw new ArgumentNullException();
             }
@@ -59,7 +59,7 @@ namespace CZZYLG_HFT_2021221.Logic
         }
         public void Update(Student student)
         {
-            if (student.StudentId < 0 || student.Name.Equals(null))
+            if (student.Id < 0 || student.Name.Equals(null))
             {
                 throw new ArgumentNullException();
             }

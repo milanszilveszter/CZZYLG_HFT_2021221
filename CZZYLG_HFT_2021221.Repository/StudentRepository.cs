@@ -26,7 +26,7 @@ namespace CZZYLG_HFT_2021221.Repository
         {
             return context
                 .Students
-                .FirstOrDefault(s => s.StudentId == id);
+                .FirstOrDefault(s => s.Id == id);
         }
         public IQueryable<Student> ReadAll()
         {
@@ -34,7 +34,7 @@ namespace CZZYLG_HFT_2021221.Repository
         }
         public void Update(Student student)
         {
-            Student old = ReadOne(student.StudentId);
+            Student old = ReadOne(student.Id);
 
             old.Name = student.Name;
             old.Grade = student.Grade;

@@ -26,25 +26,25 @@ namespace CZZYLG_HFT_2021221.Test
                 {
                     new Teacher
                     {
-                        TeacherId = 1,
+                        Id = 1,
                         Name = "TEST TEACHER1",
                         Age = 41
                     },
                     new Teacher
                     {
-                        TeacherId = 2,
+                        Id = 2,
                         Name = "TEST TEACHER2",
                         Age = 12
                     },
                     new Teacher
                     {
-                        TeacherId = 3,
+                        Id = 3,
                         Name = "TEST TEACHER3",
                         Age = 21
                     },
                     new Teacher
                     {
-                        TeacherId = 4,
+                        Id = 4,
                         Name = "TEST TEACHER4",
                         Age = 64
                     },

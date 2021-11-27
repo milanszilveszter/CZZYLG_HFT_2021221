@@ -24,7 +24,7 @@ namespace CZZYLG_HFT_2021221.Logic
 
         public void Create(Course course)
         {
-            if (course.CourseId < 0 || course.CourseName.Equals(null))
+            if (course.Id < 0 || course.CourseName.Equals(null))
             {
                 throw new ArgumentNullException();
             }
@@ -43,7 +43,7 @@ namespace CZZYLG_HFT_2021221.Logic
         }
         public void Update(Course course)
         {
-            if (course.CourseId < 0 || course.CourseName.Equals(null))
+            if (course.Id < 0 || course.CourseName.Equals(null))
             {
                 throw new ArgumentNullException();
             }

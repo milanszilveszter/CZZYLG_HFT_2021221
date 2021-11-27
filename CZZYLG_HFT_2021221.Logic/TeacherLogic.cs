@@ -32,7 +32,7 @@ namespace CZZYLG_HFT_2021221.Logic
 
         public void Create(Teacher teacher)
         {
-            if (teacher.TeacherId < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
+            if (teacher.Id < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
             {
                 throw new ArgumentNullException();
             }
@@ -52,7 +52,7 @@ namespace CZZYLG_HFT_2021221.Logic
         }
         public void Update(Teacher teacher)
         {
-            if (teacher.TeacherId < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
+            if (teacher.Id < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
             {
                 throw new ArgumentNullException();
             }

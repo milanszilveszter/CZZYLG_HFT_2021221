@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Models
@@ -13,7 +14,7 @@ namespace CZZYLG_HFT_2021221.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StudentId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -21,6 +22,7 @@ namespace CZZYLG_HFT_2021221.Models
         public double Grade { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<StudentCourses> StudentCourses { get; set; }
 
         public Student()

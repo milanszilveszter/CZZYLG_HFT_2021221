@@ -13,7 +13,7 @@ namespace CZZYLG_HFT_2021221.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TeacherId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
