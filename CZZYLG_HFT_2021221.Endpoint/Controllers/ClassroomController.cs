@@ -11,29 +11,29 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class CourseController : ControllerBase
+    public class ClassroomController : ControllerBase
     {
-        private ICourseLogic logic;
+        private IClassRoomLogic logic;
 
-        public CourseController(ICourseLogic logic)
+        public ClassroomController(IClassRoomLogic logic)
         {
             this.logic = logic;
         }
 
         [HttpGet]
-        public IEnumerable<Course> GetAll()
+        public IEnumerable<Classroom> GetAll()
         {
             return logic.ReadAll();
         }
 
         [HttpPost]
-        public void AddOne([FromBody] Course course)
+        public void AddOne([FromBody] Classroom course)
         {
             logic.Create(course);
         }
 
         [HttpPut]
-        public void EditOne([FromBody] Course course)
+        public void EditOne([FromBody] Classroom course)
         {
             logic.Update(course);
         }

@@ -44,5 +44,11 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
         {
             logic.Delete(studentId);
         }
+
+        //[HttpGet("{courseId}")] //  /student/courseId
+        //public IEnumerable<Student> StudentsByCourse([FromRoute] int courseId)
+        //{
+        //    return logic.StudentsByCourse(courseId);
+        //}
     }
 }
