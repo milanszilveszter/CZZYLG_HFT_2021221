@@ -9,29 +9,24 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Models
 {
-    [Table("Courses")]
-    public class Course
+    [Table("ClassRooms")]
+    public class ClassRoom
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
-        public string CourseName { get; set; }
+        [MaxLength(3)] 
+        public string ClassRoomNumber { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<StudentCourses> StudentCourses { get; set; }
+        [JsonIgnore]  // NAVIGATION PROP
+        public virtual ICollection<Student> Students { get; set; }
 
-        [ForeignKey(nameof(Teacher))]
-        public int TeacherId { get; set; }
-        [NotMapped]
-        [JsonIgnore]
-        public virtual Teacher Teacher { get; set; }
-
-        public Course()
+        public ClassRoom()
         {
-            StudentCourses = new HashSet<StudentCourses>();
+            Students = new HashSet<Student>();
         }
     }
 }

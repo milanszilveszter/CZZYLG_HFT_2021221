@@ -17,23 +17,18 @@ namespace CZZYLG_HFT_2021221.Models
         public int Id { get; set; }
 
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
 
         [Required]
+        [Range(1, 150)]
         public int Age { get; set; }
 
-        [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<Student> Students { get; set; }
+        public string Subject { get; set; }
 
         [NotMapped]
         [JsonIgnore]
-        public virtual Course Course { get; set; }
+        public virtual Student Student { get; set; }
 
-
-        public Teacher()
-        {
-            Students = new HashSet<Student>();
-        }
     }
 }

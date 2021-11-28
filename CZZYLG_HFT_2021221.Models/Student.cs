@@ -17,18 +17,24 @@ namespace CZZYLG_HFT_2021221.Models
         public int Id { get; set; }
 
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
-
+        
         public double Grade { get; set; }
 
+
+        [ForeignKey(nameof(ClassRoom))]
+        public int ClassRoomId { get; set; }
         [NotMapped]
-        [JsonIgnore]
-        public virtual ICollection<StudentCourses> StudentCourses { get; set; }
+        public virtual ClassRoom ClassRoom { get; set; }
+
+        [NotMapped]
+        [JsonIgnore] // NAVIGATION PROP
+        public ICollection<Teacher> Teachers { get; set; }
 
         public Student()
         {
-            StudentCourses = new HashSet<StudentCourses>();
+            Teachers = new HashSet<Teacher>();
         }
-
     }
 }
