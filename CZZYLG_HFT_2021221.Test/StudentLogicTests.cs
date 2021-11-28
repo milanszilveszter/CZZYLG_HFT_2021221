@@ -26,41 +26,25 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Name = "Teszt1",
                         Grade = 3.2,
-                        StudentCourses = new List<StudentCourses>()
-                        {
-                            new StudentCourses() { CourseId = 1 },
-                            new StudentCourses() { CourseId = 2 }
-                        }
+                        ClassroomId = 1
                     },
                     new Student()
                     {
                         Name = "Teszt2",
                         Grade = 4,
-                        StudentCourses = new List<StudentCourses>()
-                        {
-                            new StudentCourses() { CourseId = 1 },
-                            new StudentCourses() { CourseId = 2 },
-                            new StudentCourses() { CourseId = 3 }
-                        }
+                        ClassroomId = 2 
                     },
                     new Student()
                     {
                         Name = "Teszt3",
                         Grade = 2.6,
-                        StudentCourses = new List<StudentCourses>()
-                        {
-                            new StudentCourses() { CourseId = 2 }
-                        }
+                        ClassroomId = 3
                     },
                     new Student()
                     {
                         Name = "Teszt4",
                         Grade = 1.2,
-                        StudentCourses = new List<StudentCourses>()
-                        {
-                            new StudentCourses() { CourseId = 2 },
-                            new StudentCourses() { CourseId = 3 }
-                        }
+                        ClassroomId = 4
                     },
 
                 }.AsQueryable());
@@ -74,11 +58,11 @@ namespace CZZYLG_HFT_2021221.Test
             Assert.That(isl.AllGradesAverage(), Is.EqualTo(2.75f));
         }
 
-        [Test]
-        public void CoursesCountTest()
-        {
-            Assert.That(isl.CoursesCount(), Is.EqualTo(8));
-        }
+        //[Test]
+        //public void CoursesCountTest()
+        //{
+        //    Assert.That(isl.CoursesCount(), Is.EqualTo(8));
+        //}
 
         [Test]
         public void CreateTest()
@@ -86,16 +70,16 @@ namespace CZZYLG_HFT_2021221.Test
             Assert.That(() => isl.Create(new Student { }), Throws.Exception);
         }
 
-        [Test]
-        public void StudentsByCourseTest()
-        {
-            Assert.That(isl.StudentsByCourse(2).Count(), Is.EqualTo(4));
-        }
+        //[Test]
+        //public void StudentsByCourseTest()
+        //{
+        //    Assert.That(isl.StudentsByCourse(2).Count(), Is.EqualTo(4));
+        //}
 
-        [Test]
-        public void StudentGradeAvgByCourseTest()
-        {
-            Assert.That(isl.StudentGradeAvgByCourse(1), Is.EqualTo(3.6));
-        }
+        //[Test]
+        //public void StudentGradeAvgByCourseTest()
+        //{
+        //    Assert.That(isl.StudentGradeAvgByCourse(1), Is.EqualTo(3.6));
+        //}
     }
 }

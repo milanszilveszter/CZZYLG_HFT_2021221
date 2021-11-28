@@ -17,7 +17,7 @@ namespace CZZYLG_HFT_2021221.Logic
             this.repo = repo;
         }
 
-        public int CoursesCount()
+        public int ClassroomCount()
         {
             return repo.ReadAll().Count();
         }

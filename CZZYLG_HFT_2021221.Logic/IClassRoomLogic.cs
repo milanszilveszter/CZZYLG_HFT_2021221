@@ -14,6 +14,6 @@ namespace CZZYLG_HFT_2021221.Logic
         void Update(Classroom classroom);
         void Delete(int classroomId);
 
-        int CoursesCount();
+        int ClassroomCount();
     }
 }

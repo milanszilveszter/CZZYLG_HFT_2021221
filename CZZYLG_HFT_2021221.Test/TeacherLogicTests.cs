@@ -26,27 +26,27 @@ namespace CZZYLG_HFT_2021221.Test
                 {
                     new Teacher
                     {
-                        Id = 1,
                         Name = "TEST TEACHER1",
-                        Age = 41
+                        Age = 41,
+                        Subject = "sbj1"
                     },
                     new Teacher
                     {
-                        Id = 2,
                         Name = "TEST TEACHER2",
-                        Age = 12
+                        Age = 12,
+                        Subject = "sbj2"
                     },
                     new Teacher
                     {
-                        Id = 3,
                         Name = "TEST TEACHER3",
-                        Age = 21
+                        Age = 21,
+                        Subject = "sbj3"
                     },
                     new Teacher
                     {
-                        Id = 4,
                         Name = "TEST TEACHER4",
-                        Age = 64
+                        Age = 64,
+                        Subject = "sbj4"
                     },
                 }.AsQueryable());
 
