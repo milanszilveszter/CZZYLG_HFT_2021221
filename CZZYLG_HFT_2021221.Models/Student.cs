@@ -22,19 +22,9 @@ namespace CZZYLG_HFT_2021221.Models
         
         public double Grade { get; set; }
 
-
         [ForeignKey(nameof(ClassRoom))]
         public int ClassRoomId { get; set; }
         [NotMapped]
         public virtual ClassRoom ClassRoom { get; set; }
-
-        [NotMapped]
-        [JsonIgnore] // NAVIGATION PROP
-        public ICollection<Teacher> Teachers { get; set; }
-
-        public Student()
-        {
-            Teachers = new HashSet<Teacher>();
-        }
     }
 }

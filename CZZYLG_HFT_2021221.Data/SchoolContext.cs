@@ -10,9 +10,8 @@ namespace CZZYLG_HFT_2021221.Data
 {
     public class SchoolContext : DbContext
     {
+        public virtual DbSet<ClassRoom> ClassRooms { get; set; }
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<StudentCourses> StudentCourses { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
 
         public SchoolContext()
@@ -36,52 +35,41 @@ namespace CZZYLG_HFT_2021221.Data
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<StudentCourses>(entity => {
-                entity.HasKey(sc => new { sc.StudentId, sc.CourseId });
-            });
+        { 
 
-            modelBuilder.Entity<StudentCourses>(entity =>
+            modelBuilder.Entity<Student>(entity =>
             {
-                entity.HasOne(sc => sc.Student)
-                    .WithMany(s => s.StudentCourses)
-                    .HasForeignKey(sc => sc.StudentId)
+                entity.HasOne(s => s.ClassRoom)
+                    .WithMany(c => c.Students)
+                    .HasForeignKey(s => s.ClassRoomId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<StudentCourses>(entity =>
+            modelBuilder.Entity<Teacher>(entity =>
             {
-                entity.HasOne(sc => sc.Course)
-                    .WithMany(c => c.StudentCourses)
-                    .HasForeignKey(sc => sc.CourseId)
+                entity.HasOne(t => t.ClassRoom)
+                    .WithOne(c => c.Teacher)
+                    .HasForeignKey<ClassRoom>(c => c.TeacherId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<Course>(entity =>
-            {
-                entity.HasOne(c => c.Teacher)
-                    .WithOne(t => t.Course)
-                    .HasForeignKey<Teacher>(c => c.Id)
-                    .OnDelete(DeleteBehavior.Cascade);
-            });
+            Teacher t1 = new Teacher() { Id = 1, Name = "Kiss Tamás" , Age = 28, Subject = "Matematika"};
+            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 43, Subject = "Magyar nyelv és Irodalom" };
+            Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 46, Subject = "Testnevelés" };
 
-            Teacher t1 = new Teacher() { Id = 1, Name = "Kovács András" , Age = 28};
-            Teacher t2 = new Teacher() { Id = 2, Name = "Szőke Magdolna", Age = 43 };
-            Teacher t3 = new Teacher() { Id = 3, Name = "Vajda István", Age = 46 };
+            ClassRoom c1 = new ClassRoom() { Id = 1, ClassRoomNumber = "3A", TeacherId = 1 };
+            ClassRoom c2 = new ClassRoom() { Id = 2, ClassRoomNumber = "12A", TeacherId = 2 };                  
+            ClassRoom c3 = new ClassRoom() { Id = 3, ClassRoomNumber = "21B", TeacherId = 3 };
 
-            Course c1 = new Course() { Id = 1, CourseName = "Haladó Fejlesztési Technikák", TeacherId = t1.Id };
-            Course c2 = new Course() { Id = 2, CourseName = "Diszkrét Matematika és Lineáris Algebra I.", TeacherId = t2.Id };                  
-            Course c3 = new Course() { Id = 3, CourseName = "Analízis I.", TeacherId = t3.Id};
-
-            Student s1 = new Student() { Id = 1, Name = "Kiss Ádám", Grade = 3.19 };
-            Student s2 = new Student() { Id = 2, Name = "Balogh Róbert", Grade = 3.4 };
-            Student s3 = new Student() { Id = 3, Name = "Kovács Julianna", Grade = 4.44 };
-            Student s4 = new Student() { Id = 4, Name = "Gercse Ábel", Grade = 2.34 };
-            Student s5 = new Student() { Id = 5, Name = "Magyar Andor", Grade = 3 };
-            Student s6 = new Student() { Id = 6, Name = "Kertész Csaba", Grade = 2.1 };
+            Student s1 = new Student() { Id = 1, Name = "Kiss Ádám", Grade = 3.19, ClassRoomId = 1 };
+            Student s2 = new Student() { Id = 2, Name = "Balogh Róbert", Grade = 3.4, ClassRoomId = 1 };
+            Student s3 = new Student() { Id = 3, Name = "Kovács Julianna", Grade = 4.44, ClassRoomId = 2 };
+            Student s4 = new Student() { Id = 4, Name = "Gercse Ábel", Grade = 2.34, ClassRoomId = 2 };
+            Student s5 = new Student() { Id = 5, Name = "Magyar Andor", Grade = 3, ClassRoomId = 3 };
+            Student s6 = new Student() { Id = 6, Name = "Kertész Csaba", Grade = 2.1, ClassRoomId = 3 };
 
             modelBuilder.Entity<Teacher>().HasData(t1, t2, t3);
-            modelBuilder.Entity<Course>().HasData(c1, c2, c3);
+            modelBuilder.Entity<ClassRoom>().HasData(c1, c2, c3);
             modelBuilder.Entity<Student>().HasData(s1, s2, s3, s4, s5, s6);
         }
     }

@@ -27,8 +27,7 @@ namespace CZZYLG_HFT_2021221.Models
         public string Subject { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
-        public virtual Student Student { get; set; }
-
+        [JsonIgnore] // NAVIGATION PROP
+        public virtual ClassRoom ClassRoom { get; set; }
     }
 }
