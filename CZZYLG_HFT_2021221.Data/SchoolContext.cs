@@ -57,16 +57,16 @@ namespace CZZYLG_HFT_2021221.Data
             Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 43, Subject = "Magyar nyelv és Irodalom" };
             Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 46, Subject = "Testnevelés" };
 
-            Classroom c1 = new Classroom() { Id = 1, ClassroomNumber = "3A", TeacherId = 1 };
-            Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A", TeacherId = 2 };                  
-            Classroom c3 = new Classroom() { Id = 3, ClassroomNumber = "21B", TeacherId = 3 };
+            Classroom c1 = new Classroom() { Id = 1, ClassroomNumber = "3A", TeacherId = t1.Id };
+            Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A", TeacherId = t2.Id };                  
+            Classroom c3 = new Classroom() { Id = 3, ClassroomNumber = "21B", TeacherId = t3.Id };
 
-            Student s1 = new Student() { Id = 1, Name = "Kiss Ádám", Grade = 3.19, ClassroomId = 1 };
-            Student s2 = new Student() { Id = 2, Name = "Balogh Róbert", Grade = 3.4, ClassroomId = 1 };
-            Student s3 = new Student() { Id = 3, Name = "Kovács Julianna", Grade = 4.44, ClassroomId = 2 };
-            Student s4 = new Student() { Id = 4, Name = "Gercse Ábel", Grade = 2.34, ClassroomId = 2 };
-            Student s5 = new Student() { Id = 5, Name = "Magyar Andor", Grade = 3, ClassroomId = 3 };
-            Student s6 = new Student() { Id = 6, Name = "Kertész Csaba", Grade = 2.1, ClassroomId = 3 };
+            Student s1 = new Student() { Id = 1, Name = "Kiss Ádám", Grade = 3.19, ClassroomId = c1.Id };
+            Student s2 = new Student() { Id = 2, Name = "Balogh Róbert", Grade = 3.4, ClassroomId = c1.Id };
+            Student s3 = new Student() { Id = 3, Name = "Kovács Julianna", Grade = 4.44, ClassroomId = c2.Id };
+            Student s4 = new Student() { Id = 4, Name = "Gercse Ábel", Grade = 2.34, ClassroomId = c2.Id };
+            Student s5 = new Student() { Id = 5, Name = "Magyar Andor", Grade = 3, ClassroomId = c3.Id };
+            Student s6 = new Student() { Id = 6, Name = "Kertész Csaba", Grade = 2.1, ClassroomId = c3.Id };
 
             modelBuilder.Entity<Teacher>().HasData(t1, t2, t3);
             modelBuilder.Entity<Classroom>().HasData(c1, c2, c3);

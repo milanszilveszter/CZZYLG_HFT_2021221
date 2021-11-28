@@ -21,11 +21,13 @@ namespace CZZYLG_HFT_2021221.Models
         public string ClassroomNumber { get; set; }
 
         [NotMapped]
-        [JsonIgnore]  // NAVIGATION PROP
+        [JsonIgnore] // NAVIGATION PROP
         public virtual ICollection<Student> Students { get; set; }
 
+        // FK
         [ForeignKey(nameof(Teacher))]
         public int TeacherId { get; set; }
+
         [NotMapped]
         [JsonIgnore] // NAVIGATION PROP
         public virtual Teacher Teacher { get; set; }
