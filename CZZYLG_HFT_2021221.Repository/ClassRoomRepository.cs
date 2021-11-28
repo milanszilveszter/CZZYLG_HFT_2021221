@@ -8,42 +8,42 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Repository
 {
-    public class CourseRepository : ICourseRepository
+    public class ClassRoomRepository : IClassRoomRepository
     {
         SchoolContext context;
 
-        public CourseRepository(SchoolContext context)
+        public ClassRoomRepository(SchoolContext context)
         {
             this.context = context;
         }
 
-        public void Create(Course course)
+        public void Create(ClassRoom course)
         {
-            context.Courses.Add(course);
+            context.ClassRooms.Add(course);
             context.SaveChanges();
         }
-        public Course ReadOne(int id)
+        public ClassRoom ReadOne(int id)
         {
             return context
-                .Courses
+                .ClassRooms
                 .FirstOrDefault(c => c.Id == id);
         }
-        public IQueryable<Course> ReadAll()
+        public IQueryable<ClassRoom> ReadAll()
         {
-            return context.Courses;
+            return context.ClassRooms;
         }
-        public void Update(Course course)
+        public void Update(ClassRoom course)
         {
-            Course old = ReadOne(course.Id);
+            ClassRoom old = ReadOne(course.Id);
 
-            old.CourseName = course.CourseName;
             old.Id = course.Id;
+            old.ClassRoomNumber = course.ClassRoomNumber;
 
             context.SaveChanges();
         }
         public void Delete(int courseId)
         {
-            context.Courses.Remove(ReadOne(courseId));
+            context.ClassRooms.Remove(ReadOne(courseId));
             context.SaveChanges();
         }
     }

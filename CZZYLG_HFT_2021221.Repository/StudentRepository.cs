@@ -36,6 +36,7 @@ namespace CZZYLG_HFT_2021221.Repository
         {
             Student old = ReadOne(student.Id);
 
+            old.Id = student.Id;
             old.Name = student.Name;
             old.Grade = student.Grade;
 

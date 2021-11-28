@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Repository
 {
-    public interface ICourseRepository
+    public interface IClassRoomRepository
     {
-        void Create(Course course);
-        Course ReadOne(int id);
-        IQueryable<Course> ReadAll();
-        void Update(Course course);
+        void Create(ClassRoom course);
+        ClassRoom ReadOne(int id);
+        IQueryable<ClassRoom> ReadAll();
+        void Update(ClassRoom course);
         void Delete(int courseId);
     }
 }

@@ -35,9 +35,11 @@ namespace CZZYLG_HFT_2021221.Repository
         public void Update(Teacher teacher)
         {
             Teacher old = ReadOne(teacher.Id);
-
+            
+            old.Id = teacher.Id;
             old.Name = teacher.Name;
-            old.Id = teacher.Id;            
+            old.Age = teacher.Age;
+            old.Subject = teacher.Subject;
 
             context.SaveChanges();
         }
