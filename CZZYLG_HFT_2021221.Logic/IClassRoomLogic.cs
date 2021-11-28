@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Logic
 {
-    public interface ICourseLogic
+    public interface IClassRoomLogic
     {
-        void Create(Course course);
-        IEnumerable<Course> ReadAll();
-        void Update(Course course);
-        void Delete(int courseId);
+        void Create(Classroom classroom);
+        IEnumerable<Classroom> ReadAll();
+        void Update(Classroom classroom);
+        void Delete(int classroomId);
 
         int CoursesCount();
     }

@@ -23,23 +23,24 @@ namespace CZZYLG_HFT_2021221.Logic
                 .ReadAll()
                 .Average(s => s.Grade);
         }
-        public int CoursesCount()
-        {
-            return repo.ReadAll()
-                .Sum(x => x.StudentCourses.Count());
-        }
-        public IEnumerable<Student> StudentsByCourse(int courseId)
-        {
-            return from x in repo.ReadAll()
-                   where x.StudentCourses.Any(x => x.CourseId == courseId)
-                   select x;
-        }
-        public double StudentGradeAvgByCourse(int courseId)
-        { 
-            return (from x in repo.ReadAll()
-                   where x.StudentCourses.Any(x => x.CourseId == courseId)
-                   select x.Grade).Average();
-        }
+
+        //public int CoursesCount()
+        //{
+        //    return repo.ReadAll()
+        //        .Sum(x => x.StudentCourses.Count());
+        //}
+        //public IEnumerable<Student> StudentsByCourse(int courseId)
+        //{
+        //    return from x in repo.ReadAll()
+        //           where x.StudentCourses.Any(x => x.CourseId == courseId)
+        //           select x;
+        //}
+        //public double StudentGradeAvgByCourse(int courseId)
+        //{ 
+        //    return (from x in repo.ReadAll()
+        //           where x.StudentCourses.Any(x => x.CourseId == courseId)
+        //           select x.Grade).Average();
+        //}
 
         public void Create(Student student)
         {
