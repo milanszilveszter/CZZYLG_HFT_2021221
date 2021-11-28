@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Repository
 {
-    public class ClassRoomRepository : IClassRoomRepository
+    public class ClassRoomRepository : IClassroomRepository
     {
         SchoolContext context;
 
@@ -17,33 +17,34 @@ namespace CZZYLG_HFT_2021221.Repository
             this.context = context;
         }
 
-        public void Create(ClassRoom course)
+        public void Create(Classroom course)
         {
-            context.ClassRooms.Add(course);
+            context.Classrooms.Add(course);
             context.SaveChanges();
         }
-        public ClassRoom ReadOne(int id)
+        public Classroom ReadOne(int id)
         {
             return context
-                .ClassRooms
+                .Classrooms
                 .FirstOrDefault(c => c.Id == id);
         }
-        public IQueryable<ClassRoom> ReadAll()
+        public IQueryable<Classroom> ReadAll()
         {
-            return context.ClassRooms;
+            return context.Classrooms;
         }
-        public void Update(ClassRoom course)
+        public void Update(Classroom classroom)
         {
-            ClassRoom old = ReadOne(course.Id);
+            Classroom old = ReadOne(classroom.Id);
 
-            old.Id = course.Id;
-            old.ClassRoomNumber = course.ClassRoomNumber;
+            old.Id = classroom.Id;
+            old.ClassroomNumber = classroom.ClassroomNumber;
+            old.TeacherId = classroom.TeacherId;
 
             context.SaveChanges();
         }
         public void Delete(int courseId)
         {
-            context.ClassRooms.Remove(ReadOne(courseId));
+            context.Classrooms.Remove(ReadOne(courseId));
             context.SaveChanges();
         }
     }

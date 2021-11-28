@@ -22,9 +22,9 @@ namespace CZZYLG_HFT_2021221.Models
         
         public double Grade { get; set; }
 
-        [ForeignKey(nameof(ClassRoom))]
-        public int ClassRoomId { get; set; }
+        [ForeignKey(nameof(Classroom))]
+        public int ClassroomId { get; set; }
         [NotMapped]
-        public virtual ClassRoom ClassRoom { get; set; }
+        public virtual Classroom Classroom { get; set; }
     }
 }

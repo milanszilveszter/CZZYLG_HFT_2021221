@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Models
 {
-    [Table("ClassRooms")]
-    public class ClassRoom
+    [Table("Classrooms")]
+    public class Classroom
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,7 +18,7 @@ namespace CZZYLG_HFT_2021221.Models
 
         [Required]
         [MaxLength(3)] 
-        public string ClassRoomNumber { get; set; }
+        public string ClassroomNumber { get; set; }
 
         [NotMapped]
         [JsonIgnore]  // NAVIGATION PROP
@@ -30,7 +30,7 @@ namespace CZZYLG_HFT_2021221.Models
         [JsonIgnore] // NAVIGATION PROP
         public virtual Teacher Teacher { get; set; }
 
-        public ClassRoom()
+        public Classroom()
         {
             Students = new HashSet<Student>();
         }

@@ -28,6 +28,6 @@ namespace CZZYLG_HFT_2021221.Models
 
         [NotMapped]
         [JsonIgnore] // NAVIGATION PROP
-        public virtual ClassRoom ClassRoom { get; set; }
+        public virtual Classroom Classroom { get; set; }
     }
 }
