@@ -26,6 +26,9 @@ namespace CZZYLG_HFT_2021221.Models
 
         public string Subject { get; set; }
 
+        [ForeignKey(nameof(Classroom))]
+        public int ClassroomId { get; set; }
+
         [NotMapped]
         [JsonIgnore] // NAVIGATION PROP
         public virtual Classroom Classroom { get; set; }

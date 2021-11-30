@@ -22,14 +22,6 @@ namespace CZZYLG_HFT_2021221.Logic
             return repo.ReadAll().Average(x => x.Age);
         }
 
-        //public IEnumerable<Teacher> MostStudentsWithAvgGt3()
-        //{
-        //    return (IEnumerable<Teacher>)repo
-        //        .ReadAll()
-        //        .Select(x => x.Students
-        //            .Where(s => s.Grade >= 3f));
-        //}
-
         public void Create(Teacher teacher)
         {
             if (teacher.Id < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))

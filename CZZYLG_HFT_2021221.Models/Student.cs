@@ -21,7 +21,6 @@ namespace CZZYLG_HFT_2021221.Models
         public string Name { get; set; }
         public double Grade { get; set; }
 
-        // FK 
         [ForeignKey(nameof(Classroom))]
         public int ClassroomId { get; set; }
 

@@ -28,7 +28,7 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Name = "TEST TEACHER1",
                         Age = 41,
-                        Subject = "sbj1"
+                        Subject = "sbj1",
                     },
                     new Teacher
                     {

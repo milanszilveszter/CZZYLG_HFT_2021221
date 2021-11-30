@@ -15,9 +15,8 @@ namespace CZZYLG_HFT_2021221.Logic
         void Delete(int studentId);
 
         double AllGradesAverage();
+        IEnumerable<Student> StudentsInTheSameClassroom(int classroomId);
 
-        //int CoursesCount();
-        //IEnumerable<Student> StudentsByCourse(int courseId);
-        //double StudentGradeAvgByCourse(int courseId);
+        IEnumerable<Student> StudentsWithOldTeachers();
     }
 }

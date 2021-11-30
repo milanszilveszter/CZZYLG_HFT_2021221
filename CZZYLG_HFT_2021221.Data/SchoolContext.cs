@@ -43,7 +43,7 @@ namespace CZZYLG_HFT_2021221.Data
                     .WithMany(c => c.Students)
                     .HasForeignKey(s => s.ClassroomId)
                     .OnDelete(DeleteBehavior.Cascade);
-            });
+            }); 
 
             modelBuilder.Entity<Teacher>(entity =>
             {
@@ -54,8 +54,8 @@ namespace CZZYLG_HFT_2021221.Data
             });
 
             Teacher t1 = new Teacher() { Id = 1, Name = "Kiss Tamás" , Age = 28, Subject = "Matematika"};
-            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 43, Subject = "Magyar nyelv és Irodalom" };
-            Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 46, Subject = "Testnevelés" };
+            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 66, Subject = "Magyar nyelv és Irodalom" };
+            Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 51, Subject = "Testnevelés" };
 
             Classroom c1 = new Classroom() { Id = 1, ClassroomNumber = "3A", TeacherId = t1.Id };
             Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A", TeacherId = t2.Id };                  

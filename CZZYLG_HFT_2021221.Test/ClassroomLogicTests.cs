@@ -21,29 +21,38 @@ namespace CZZYLG_HFT_2021221.Test
         {
             Mock<IClassroomRepository> mockCourseRepo = new Mock<IClassroomRepository>();
 
+            Teacher t1 = new Teacher() { Id = 1, Name = "Tanar1", Age = 41, ClassroomId = 1};
+            Teacher t2 = new Teacher() { Id = 2, Name = "Tanar2", Age = 24, ClassroomId = 2 };
+            Teacher t3 = new Teacher() { Id = 3, Name = "Tanar3", Age = 51, ClassroomId = 3 };
+            Teacher t4 = new Teacher() { Id = 4, Name = "Tanar4", Age = 67, ClassroomId = 4 };
+
             mockCourseRepo.Setup(x => x.ReadAll())
                 .Returns(new List<Classroom>
                 {
                     new Classroom
                     {
+                        Id = 1,
                         ClassroomNumber = "111",
-                        TeacherId = 1
+                        Teacher = t1
                     },
                     new Classroom
                     {
+                        Id = 2,
                         ClassroomNumber = "222",
-                        TeacherId = 2
+                        Teacher = t2
                     },
                     new Classroom
                     {
+                        Id = 3,
                         ClassroomNumber = "333",
-                        TeacherId = 3
+                        Teacher = t3
                     },
                     new Classroom
                     {
+                        Id = 4,
                         ClassroomNumber = "444",
-                        TeacherId = 4
-                    },
+                        Teacher = t4
+                    }
                 }.AsQueryable()); 
 
             icl = new ClassRoomLogic(mockCourseRepo.Object);

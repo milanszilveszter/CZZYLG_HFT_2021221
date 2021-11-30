@@ -24,6 +24,23 @@ namespace CZZYLG_HFT_2021221.Logic
                 .Average(s => s.Grade);
         }
 
+        public IEnumerable<Student> StudentsInTheSameClassroom(int classroomId)
+        {
+            return from x in repo.ReadAll()
+                   where x.ClassroomId == classroomId
+                   select x;
+        }
+
+        public IEnumerable<Student> StudentsWithOldTeachers()
+        {
+            
+
+            return from s in repo.ReadAll()
+                   where s.Classroom.Teacher.Age > 50
+                   select s;
+
+        }
+
         //public int CoursesCount()
         //{
         //    return repo.ReadAll()
@@ -73,5 +90,6 @@ namespace CZZYLG_HFT_2021221.Logic
         {
             repo.Delete(studentId);
         }
+
     }
 }
