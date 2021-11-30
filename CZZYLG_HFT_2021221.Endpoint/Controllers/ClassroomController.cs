@@ -13,9 +13,9 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
     [ApiController]
     public class ClassroomController : ControllerBase
     {
-        private IClassRoomLogic logic;
+        private IClassroomLogic logic;
 
-        public ClassroomController(IClassRoomLogic logic)
+        public ClassroomController(IClassroomLogic logic)
         {
             this.logic = logic;
         }

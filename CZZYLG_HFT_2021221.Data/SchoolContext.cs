@@ -49,17 +49,17 @@ namespace CZZYLG_HFT_2021221.Data
             {
                 entity.HasOne(t => t.Classroom)
                     .WithOne(c => c.Teacher)
-                    .HasForeignKey<Classroom>(c => c.TeacherId)
+                    .HasForeignKey<Teacher>(t => t.ClassroomId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
-            Teacher t1 = new Teacher() { Id = 1, Name = "Kiss Tamás" , Age = 28, Subject = "Matematika"};
-            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 66, Subject = "Magyar nyelv és Irodalom" };
-            Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 51, Subject = "Testnevelés" };
+            Classroom c1 = new Classroom() { Id = 1, ClassroomNumber = "3A" };
+            Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A" };                  
+            Classroom c3 = new Classroom() { Id = 3, ClassroomNumber = "21B" };
 
-            Classroom c1 = new Classroom() { Id = 1, ClassroomNumber = "3A", TeacherId = t1.Id };
-            Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A", TeacherId = t2.Id };                  
-            Classroom c3 = new Classroom() { Id = 3, ClassroomNumber = "21B", TeacherId = t3.Id };
+            Teacher t1 = new Teacher() { Id = 1, Name = "Kiss Tamás", Age = 28, Subject = "Matematika", ClassroomId = c1.Id };
+            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 66, Subject = "Magyar nyelv és Irodalom", ClassroomId = c2.Id };
+            Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 51, Subject = "Testnevelés", ClassroomId = c3.Id };
 
             Student s1 = new Student() { Id = 1, Name = "Kiss Ádám", Grade = 3.19, ClassroomId = c1.Id };
             Student s2 = new Student() { Id = 2, Name = "Balogh Róbert", Grade = 3.4, ClassroomId = c1.Id };

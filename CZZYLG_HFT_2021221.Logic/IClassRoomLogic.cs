@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Logic
 {
-    public interface IClassRoomLogic
+    public interface IClassroomLogic
     {
         void Create(Classroom classroom);
         IEnumerable<Classroom> ReadAll();
@@ -15,5 +15,6 @@ namespace CZZYLG_HFT_2021221.Logic
         void Delete(int classroomId);
 
         int ClassroomCount();
+        public IEnumerable<Classroom> ClassroomsWithYoungTeachers();
     }
 }

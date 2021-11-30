@@ -25,7 +25,7 @@ namespace CZZYLG_HFT_2021221.Endpoint
             services.AddTransient<IStudentRepository, StudentRepository>();
             services.AddTransient<ITeacherLogic, TeacherLogic>();
             services.AddTransient<ITeacherRepository, TeacherRepository>();
-            services.AddTransient<IClassRoomLogic, ClassRoomLogic>();
+            services.AddTransient<IClassroomLogic, ClassroomLogic>();
             services.AddTransient<IClassroomRepository, ClassroomRepository>();
             services.AddTransient<SchoolContext, SchoolContext>();
         }

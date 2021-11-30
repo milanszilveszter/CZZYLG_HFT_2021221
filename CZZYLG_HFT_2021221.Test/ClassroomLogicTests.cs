@@ -14,14 +14,14 @@ namespace CZZYLG_HFT_2021221.Test
     [TestFixture]
     class ClassroomLogicTests
     {
-        IClassRoomLogic icl;
+        IClassroomLogic icl;
 
         [SetUp]
         public void Setup()
         {
             Mock<IClassroomRepository> mockCourseRepo = new Mock<IClassroomRepository>();
 
-            Teacher t1 = new Teacher() { Id = 1, Name = "Tanar1", Age = 41, ClassroomId = 1};
+            Teacher t1 = new Teacher() { Id = 1, Name = "Tanar1", Age = 29, ClassroomId = 1};
             Teacher t2 = new Teacher() { Id = 2, Name = "Tanar2", Age = 24, ClassroomId = 2 };
             Teacher t3 = new Teacher() { Id = 3, Name = "Tanar3", Age = 51, ClassroomId = 3 };
             Teacher t4 = new Teacher() { Id = 4, Name = "Tanar4", Age = 67, ClassroomId = 4 };
@@ -55,7 +55,7 @@ namespace CZZYLG_HFT_2021221.Test
                     }
                 }.AsQueryable()); 
 
-            icl = new ClassRoomLogic(mockCourseRepo.Object);
+            icl = new ClassroomLogic(mockCourseRepo.Object);
         }
 
         [Test]
@@ -70,6 +70,11 @@ namespace CZZYLG_HFT_2021221.Test
         public void CreateTest()
         {
             Assert.That(() => icl.Create(new Classroom { }), Throws.Exception);
-        }   
+        }  
+        [Test]
+        public void ClassroomsWithYoungTeachersTest()
+        {
+            Assert.That(icl.ClassroomsWithYoungTeachers().Count(), Is.EqualTo(2));
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace CZZYLG_HFT_2021221.Repository
             old.Name = teacher.Name;
             old.Age = teacher.Age;
             old.Subject = teacher.Subject;
+            old.ClassroomId = teacher.ClassroomId;
 
             context.SaveChanges();
         }

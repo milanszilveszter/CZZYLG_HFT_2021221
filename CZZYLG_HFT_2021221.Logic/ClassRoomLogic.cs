@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Logic
 {
-    public class ClassRoomLogic : IClassRoomLogic
+    public class ClassroomLogic : IClassroomLogic
     {
         IClassroomRepository repo;
 
-        public ClassRoomLogic(IClassroomRepository repo)
+        public ClassroomLogic(IClassroomRepository repo)
         {
             this.repo = repo;
         }
@@ -20,6 +20,13 @@ namespace CZZYLG_HFT_2021221.Logic
         public int ClassroomCount()
         {
             return repo.ReadAll().Count();
+        }
+
+        public IEnumerable<Classroom> ClassroomsWithYoungTeachers()
+        {
+            return from x in repo.ReadAll()
+                   where x.Teacher.Age < 30
+                   select x;
         }
 
         public void Create(Classroom classRoom)

@@ -38,7 +38,6 @@ namespace CZZYLG_HFT_2021221.Repository
 
             old.Id = classroom.Id;
             old.ClassroomNumber = classroom.ClassroomNumber;
-            old.TeacherId = classroom.TeacherId;
 
             context.SaveChanges();
         }
