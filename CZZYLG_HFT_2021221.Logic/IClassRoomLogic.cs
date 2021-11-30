@@ -16,5 +16,6 @@ namespace CZZYLG_HFT_2021221.Logic
 
         int ClassroomCount();
         public IEnumerable<Classroom> ClassroomsWithYoungTeachers();
+        public Classroom ClassroomWithTheMostStudent();
     }
 }

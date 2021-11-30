@@ -16,7 +16,7 @@ namespace CZZYLG_HFT_2021221.Logic
 
         double AllGradesAverage();
         IEnumerable<Student> StudentsInTheSameClassroom(int classroomId);
-
         IEnumerable<Student> StudentsWithOldTeachers();
+        IEnumerable<KeyValuePair<string, double>> AvgGradesByClassroom();
     }
 }

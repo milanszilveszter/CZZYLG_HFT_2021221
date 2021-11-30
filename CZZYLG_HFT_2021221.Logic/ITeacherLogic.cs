@@ -16,6 +16,6 @@ namespace CZZYLG_HFT_2021221.Logic
 
         double AgeAverage();
 
-        //IEnumerable<Teacher> MostStudentsWithAvgGt3();
+        IEnumerable<KeyValuePair<string, Student>> WorstStudentsByTeachers();
     }
 }

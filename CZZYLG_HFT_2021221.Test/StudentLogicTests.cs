@@ -31,7 +31,7 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Id = 1,
                         Name = "Teszt1",
-                        Grade = 3.2,
+                        Grade = 3,
                         ClassroomId = cr1.Id,
                         Classroom = cr1
                     },
@@ -79,7 +79,7 @@ namespace CZZYLG_HFT_2021221.Test
             Assert.That(isl.AllGradesAverage(), Is.EqualTo(2.92));
         }      
 
-        [Test] // CREATE TEST
+        [Test] // CREATE
         public void CreateTest()
         {
             Assert.That(() => isl.Create(new Student { }), Throws.Exception);
@@ -95,6 +95,13 @@ namespace CZZYLG_HFT_2021221.Test
         public void StudentsWithOldTeachersTest()
         {
             Assert.That(isl.StudentsWithOldTeachers().Count(), Is.EqualTo(3));
+        }
+
+        [Test] // NON-CRUD
+        public void AvgGradesByClassroomTest()
+        {
+            var firstClassAvg = isl.AvgGradesByClassroom().ToList().First().Value;
+            Assert.That(firstClassAvg, Is.EqualTo(3.3));
         }
     }
 }

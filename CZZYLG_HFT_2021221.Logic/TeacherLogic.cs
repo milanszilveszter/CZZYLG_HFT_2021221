@@ -22,6 +22,17 @@ namespace CZZYLG_HFT_2021221.Logic
             return repo.ReadAll().Average(x => x.Age);
         }
 
+        public IEnumerable<KeyValuePair<string, Student>> WorstStudentsByTeachers()
+        {
+            return repo
+                .ReadAll()
+                .GroupBy(x => x.Classroom)
+                .Select(x => new KeyValuePair<string, Student>(
+                    x.Key.Teacher.Name,
+                    x.Key.Students.OrderBy(y => y.Grade).FirstOrDefault()
+                ));
+        }
+
         public void Create(Teacher teacher)
         {
             if (teacher.Id < 0 || teacher.Age.Equals(null) || teacher.Name.Equals(null))
