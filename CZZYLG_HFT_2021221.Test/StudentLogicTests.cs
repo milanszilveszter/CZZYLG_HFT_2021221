@@ -76,7 +76,7 @@ namespace CZZYLG_HFT_2021221.Test
         [Test]
         public void AllGradesAverageTest()
         {
-            Assert.That(isl.AllGradesAverage(), Is.EqualTo(2.92));
+            Assert.That(isl.AllGradesAverage(), Is.EqualTo(2.8799999999999999));
         }      
 
         [Test] // CREATE

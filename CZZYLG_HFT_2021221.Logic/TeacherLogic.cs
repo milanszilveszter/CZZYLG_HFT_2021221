@@ -26,10 +26,8 @@ namespace CZZYLG_HFT_2021221.Logic
         {
             return repo
                 .ReadAll()
-                .GroupBy(x => x.Classroom)
                 .Select(x => new KeyValuePair<string, Student>(
-                    x.Key.Teacher.Name,
-                    x.Key.Students.OrderBy(y => y.Grade).FirstOrDefault()
+                    x.Name, x.Classroom.Students.OrderBy(y => y.Grade).FirstOrDefault()
                 ));
         }
 

@@ -32,8 +32,7 @@ namespace CZZYLG_HFT_2021221.Logic
         public Classroom ClassroomWithTheMostStudent()
         {
             return repo.ReadAll().OrderByDescending(x => x.Students.Count()).FirstOrDefault();              
-        }     
-
+        }          
         public void Create(Classroom classRoom)
         {
             if (classRoom.Id < 0 || classRoom.ClassroomNumber.Equals(null))

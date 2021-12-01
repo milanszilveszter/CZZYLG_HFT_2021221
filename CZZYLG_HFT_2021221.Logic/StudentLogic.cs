@@ -29,7 +29,7 @@ namespace CZZYLG_HFT_2021221.Logic
             return from x in repo.ReadAll()
                    where x.ClassroomId == classroomId
                    select x;
-        } // át lehetne írni keyvaluepair-re
+        }
 
         public IEnumerable<Student> StudentsWithOldTeachers()
         {
@@ -45,28 +45,10 @@ namespace CZZYLG_HFT_2021221.Logic
         {
             return repo
                 .ReadAll()
-                .GroupBy(x => x.Classroom)
+                .GroupBy(x => x.Classroom.ClassroomNumber)
                 .Select(x => new KeyValuePair<string, double>(
-                    x.Key.ClassroomNumber, x.Average(c => c.Grade)));
-        }
-
-        //public int CoursesCount()
-        //{
-        //    return repo.ReadAll()
-        //        .Sum(x => x.StudentCourses.Count());
-        //}
-        //public IEnumerable<Student> StudentsByCourse(int courseId)
-        //{
-        //    return from x in repo.ReadAll()
-        //           where x.StudentCourses.Any(x => x.CourseId == courseId)
-        //           select x;
-        //}
-        //public double StudentGradeAvgByCourse(int courseId)
-        //{ 
-        //    return (from x in repo.ReadAll()
-        //           where x.StudentCourses.Any(x => x.CourseId == courseId)
-        //           select x.Grade).Average();
-        //}
+                    x.Key, x.Average(c => c.Grade)));
+        }     
 
         public void Create(Student student)
         {
