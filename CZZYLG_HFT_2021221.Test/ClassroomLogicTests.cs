@@ -80,7 +80,7 @@ namespace CZZYLG_HFT_2021221.Test
         }
 
         [Test]
-        public void Test1()
+        public void ClassroomCountTest()
         {
             int count = icl.ClassroomCount();
 
