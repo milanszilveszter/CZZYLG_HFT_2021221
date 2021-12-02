@@ -58,7 +58,7 @@ namespace CZZYLG_HFT_2021221.Data
             Classroom c3 = new Classroom() { Id = 3, ClassroomNumber = "21B" };
 
             Teacher t1 = new Teacher() { Id = 1, Name = "Kiss Tamás", Age = 28, Subject = "Matematika", ClassroomId = c1.Id };
-            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 66, Subject = "Magyar nyelv és Irodalom", ClassroomId = c2.Id };
+            Teacher t2 = new Teacher() { Id = 2, Name = "Magyar Julianna", Age = 66, Subject = "Magyar nyelv", ClassroomId = c2.Id };
             Teacher t3 = new Teacher() { Id = 3, Name = "Vajda Márk", Age = 51, Subject = "Testnevelés", ClassroomId = c3.Id };
 
             Student s1 = new Student() { Id = 1, Name = "Kiss Ádám", Grade = 3.19, ClassroomId = c1.Id };
