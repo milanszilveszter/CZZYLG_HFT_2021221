@@ -1,9 +1,7 @@
 ﻿using ConsoleTools;
 using CZZYLG_HFT_2021221.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CZZYLG_HFT_2021221.Client
 {
@@ -20,21 +18,21 @@ namespace CZZYLG_HFT_2021221.Client
                 .Add("Add Student", () => AddStudent())
                 .Add("Update Student", () => UpdateStudent())
                 .Add("Delete Student", () => DeleteStudent())
-                .Add("Exit", ConsoleMenu.Close);          
+                .Add("Back", ConsoleMenu.Close);
 
             var classroomMenu = new ConsoleMenu(args, level: 1)
                 .Add("List Classrooms", () => ReadAllClassroom())
                 .Add("Add Classroom", () => AddClassroom())
                 .Add("Update Classroom", () => UpdateClassroom())
                 .Add("Delete Classroom", () => DeleteClassroom())
-                .Add("Exit", ConsoleMenu.Close);
+                .Add("Back", ConsoleMenu.Close);
 
             var teacherMenu = new ConsoleMenu(args, level: 1)
                 .Add("List Teachers", () => ReadAllTeacher())
                 .Add("Add Teacher", () => AddTeacher())
                 .Add("Update Teacher", () => UpdateTeacher())
                 .Add("Delete Teacher", () => DeleteTeacher())
-                .Add("Exit", ConsoleMenu.Close);
+                .Add("Back", ConsoleMenu.Close);
 
             var nonCrudMenu = new ConsoleMenu(args, level: 1)
                 .Add("All students average grade", () => StudentAllGradesAvg())
@@ -46,7 +44,7 @@ namespace CZZYLG_HFT_2021221.Client
                 .Add("Classroom with the most students", () => ClassroomWithTheMostStudent())
                 .Add("Average age of teachers", () => TeacherAgeAverage())
                 .Add("Worst students by teachers", () => WorstStudentsByTeachers())
-                .Add("Exit", ConsoleMenu.Close);
+                .Add("Back", ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0)
                 .Add("Students", studentMenu.Show)
@@ -92,7 +90,7 @@ namespace CZZYLG_HFT_2021221.Client
             var grade = double.Parse(Console.ReadLine());
             Console.Write("ID of Classroom: ");
             var classroomId = int.Parse(Console.ReadLine());
-            rest.Post(new Student() { Name = firstName+" "+lastName, Grade = grade, ClassroomId = classroomId }, "student");
+            rest.Post(new Student() { Name = firstName + " " + lastName, Grade = grade, ClassroomId = classroomId }, "student");
             Console.Clear();
             Console.WriteLine("*** New student successfully created! ***");
             Console.WriteLine("\nPress any key to continue...");
@@ -158,7 +156,7 @@ namespace CZZYLG_HFT_2021221.Client
             Console.Clear();
             Console.WriteLine("Enter the new classroom's number: ");
             Console.WriteLine("(max. 3 character A - Z, 0 - 9)");
-            var classroomNumber = Console.ReadLine();           
+            var classroomNumber = Console.ReadLine();
             rest.Post(new Classroom() { ClassroomNumber = classroomNumber }, "classroom");
             Console.Clear();
             Console.WriteLine("*** New classroom successfully created! ***");
@@ -178,7 +176,7 @@ namespace CZZYLG_HFT_2021221.Client
             var classroomId = int.Parse(Console.ReadLine());
             Console.Clear();
             Console.Write("(new) Classroom number: ");
-            var newClassroomNumber = Console.ReadLine();     
+            var newClassroomNumber = Console.ReadLine();
             rest.Put(new Classroom() { Id = classroomId, ClassroomNumber = newClassroomNumber }, "classroom");
             Console.Clear();
             Console.WriteLine("*** Classroom successfully updated! ***");
@@ -212,7 +210,7 @@ namespace CZZYLG_HFT_2021221.Client
             foreach (var t in allTeacher)
             {
                 Console.WriteLine($"{t.Id}\t{t.Name}\t\t{t.Age}\t{t.Subject}\t{t.ClassroomId}");
-            }           
+            }
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadLine();
         }

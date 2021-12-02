@@ -68,7 +68,7 @@ namespace CZZYLG_HFT_2021221.Test
                         Classroom = cr1
                     }
 
-                }.AsQueryable()) ;
+                }.AsQueryable());
 
             isl = new StudentLogic(mockStudentRepo.Object);
         }
@@ -77,7 +77,7 @@ namespace CZZYLG_HFT_2021221.Test
         public void AllGradesAverageTest()
         {
             Assert.That(isl.AllGradesAverage(), Is.EqualTo(2.8799999999999999));
-        }      
+        }
 
         [Test] // CREATE
         public void CreateTest()

@@ -3,8 +3,6 @@ using CZZYLG_HFT_2021221.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Logic
 {
@@ -33,7 +31,7 @@ namespace CZZYLG_HFT_2021221.Logic
 
         public IEnumerable<Student> StudentsWithOldTeachers()
         {
-            
+
 
             return from s in repo.ReadAll()
                    where s.Classroom.Teacher.Age > 50
@@ -48,7 +46,7 @@ namespace CZZYLG_HFT_2021221.Logic
                 .GroupBy(x => x.Classroom.ClassroomNumber)
                 .Select(x => new KeyValuePair<string, double>(
                     x.Key, x.Average(c => c.Grade)));
-        }     
+        }
 
         public void Create(Student student)
         {

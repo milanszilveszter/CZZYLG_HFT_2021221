@@ -1,10 +1,6 @@
 ﻿using CZZYLG_HFT_2021221.Data;
 using CZZYLG_HFT_2021221.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Repository
 {
@@ -35,7 +31,7 @@ namespace CZZYLG_HFT_2021221.Repository
         public void Update(Teacher teacher)
         {
             Teacher old = ReadOne(teacher.Id);
-            
+
             old.Id = teacher.Id;
             old.Name = teacher.Name;
             old.Age = teacher.Age;

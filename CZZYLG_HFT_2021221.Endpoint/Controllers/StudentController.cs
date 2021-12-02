@@ -1,10 +1,7 @@
 ﻿using CZZYLG_HFT_2021221.Logic;
 using CZZYLG_HFT_2021221.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -43,6 +40,6 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
         public void DeleteOne([FromRoute] int studentId)
         {
             logic.Delete(studentId);
-        }       
+        }
     }
 }

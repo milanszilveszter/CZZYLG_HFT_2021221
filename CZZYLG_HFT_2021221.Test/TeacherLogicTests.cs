@@ -3,11 +3,8 @@ using CZZYLG_HFT_2021221.Models;
 using CZZYLG_HFT_2021221.Repository;
 using Moq;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Test
 {
@@ -21,31 +18,50 @@ namespace CZZYLG_HFT_2021221.Test
         {
             Mock<ITeacherRepository> mockTeacherRepo = new Mock<ITeacherRepository>();
 
-            Classroom cr1 = new Classroom() { Id = 1, ClassroomNumber = "AAA", Teacher = new Teacher() { Id = 1, Name = "Tanár1", Age = 51 }, 
-            Students = new List<Student>() 
+            Classroom cr1 = new Classroom()
+            {
+                Id = 1,
+                ClassroomNumber = "AAA",
+                Teacher = new Teacher() { Id = 1, Name = "Tanár1", Age = 51 },
+                Students = new List<Student>()
             {
                 new Student() { Id = 1, Name = "Diak1", Grade = 3.25, ClassroomId = 1 },
                 new Student() { Id = 2, Name = "Diak2", Grade = 2.1, ClassroomId = 1 }
-            }};
-            Classroom cr2 = new Classroom() { Id = 2, ClassroomNumber = "BBB", Teacher = new Teacher() { Id = 2, Name = "Tanár2", Age = 60 },
-            Students = new List<Student>()
+            }
+            };
+            Classroom cr2 = new Classroom()
+            {
+                Id = 2,
+                ClassroomNumber = "BBB",
+                Teacher = new Teacher() { Id = 2, Name = "Tanár2", Age = 60 },
+                Students = new List<Student>()
             {
                 new Student() { Id = 3, Name = "Diak3", Grade = 3.5, ClassroomId = 2 },
                 new Student() { Id = 4, Name = "Diak4", Grade = 5, ClassroomId = 2 },
                 new Student() { Id = 5, Name = "Diak5", Grade = 4.3, ClassroomId = 2 },
             }
             };
-            Classroom cr3 = new Classroom() { Id = 3, ClassroomNumber = "CCC", Teacher = new Teacher() { Id = 3, Name = "Tanár3", Age = 28 },
-            Students = new List<Student>()
+            Classroom cr3 = new Classroom()
+            {
+                Id = 3,
+                ClassroomNumber = "CCC",
+                Teacher = new Teacher() { Id = 3, Name = "Tanár3", Age = 28 },
+                Students = new List<Student>()
             {
                 new Student() { Id = 6, Name = "Diak6", Grade = 3, ClassroomId = 3 }
-            }};
-            Classroom cr4 = new Classroom() { Id = 4, ClassroomNumber = "DDD", Teacher = new Teacher() { Id = 4, Name = "Tanár4", Age = 44 },
-            Students = new List<Student>()
+            }
+            };
+            Classroom cr4 = new Classroom()
+            {
+                Id = 4,
+                ClassroomNumber = "DDD",
+                Teacher = new Teacher() { Id = 4, Name = "Tanár4", Age = 44 },
+                Students = new List<Student>()
             {
                 new Student() { Id = 7, Name = "Diak7", Grade = 1.2, ClassroomId = 4 },
                 new Student() { Id = 8, Name = "Diak8", Grade = 4.4, ClassroomId = 4 }
-            }};
+            }
+            };
 
             mockTeacherRepo.Setup(x => x.ReadAll())
                 .Returns(new List<Teacher>
@@ -87,7 +103,7 @@ namespace CZZYLG_HFT_2021221.Test
                         Classroom = cr4
 
                     },
-                }.AsQueryable()) ;
+                }.AsQueryable());
 
             itl = new TeacherLogic(mockTeacherRepo.Object);
         }

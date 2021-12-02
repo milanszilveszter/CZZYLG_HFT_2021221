@@ -1,10 +1,5 @@
 ﻿using CZZYLG_HFT_2021221.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CZZYLG_HFT_2021221.Data
 {
@@ -35,7 +30,7 @@ namespace CZZYLG_HFT_2021221.Data
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
+        {
 
             modelBuilder.Entity<Student>(entity =>
             {
@@ -43,7 +38,7 @@ namespace CZZYLG_HFT_2021221.Data
                     .WithMany(c => c.Students)
                     .HasForeignKey(s => s.ClassroomId)
                     .OnDelete(DeleteBehavior.Cascade);
-            }); 
+            });
 
             modelBuilder.Entity<Teacher>(entity =>
             {
@@ -54,7 +49,7 @@ namespace CZZYLG_HFT_2021221.Data
             });
 
             Classroom c1 = new Classroom() { Id = 1, ClassroomNumber = "3A" };
-            Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A" };                  
+            Classroom c2 = new Classroom() { Id = 2, ClassroomNumber = "12A" };
             Classroom c3 = new Classroom() { Id = 3, ClassroomNumber = "21B" };
 
             Teacher t1 = new Teacher() { Id = 1, Name = "Kiss Tamás", Age = 28, Subject = "Matematika", ClassroomId = c1.Id };
