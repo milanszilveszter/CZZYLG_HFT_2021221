@@ -86,7 +86,6 @@ namespace CZZYLG_HFT_2021221.Client
             HttpResponseMessage response =
                 client.PutAsJsonAsync(endpoint, item).GetAwaiter().GetResult();
 
-
             response.EnsureSuccessStatusCode();
         }
     }
