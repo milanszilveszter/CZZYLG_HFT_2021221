@@ -63,7 +63,7 @@ namespace CZZYLG_HFT_2021221.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Students = new RestCollection<Student>("http://localhost:49692/", "student");
+                Students = new RestCollection<Student>("http://localhost:49692/", "student", "hub");
 
                 CreateStudentCommand = new RelayCommand(() =>
                 {
