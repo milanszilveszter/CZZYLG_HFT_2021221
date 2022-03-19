@@ -11,7 +11,12 @@
     </Window.DataContext>
     <Grid>
         <TabControl>
-            <TabItem Header="Students">
+            <TabItem Header="Students" >
+                <TabItem.Resources>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Background" Value="LightBlue"/>
+                    </Style>
+                </TabItem.Resources>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -35,6 +40,11 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Teachers">
+                <TabItem.Resources>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Background" Value="LightPink"/>
+                    </Style>
+                </TabItem.Resources>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -58,6 +68,11 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Classrooms">
+                <TabItem.Resources>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Background" Value="LightGreen"/>
+                    </Style>
+                </TabItem.Resources>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32228.430
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZZYLG_HFT_2021221.Client", "CZZYLG_HFT_2021221.Client\CZZYLG_HFT_2021221.Client.csproj", "{9DC973E4-B034-435B-954E-792EBE3323F1}"
 EndProject
@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{D99225
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZZYLG_HFT_2021221.Test", "CZZYLG_HFT_2021221.Test\CZZYLG_HFT_2021221.Test.csproj", "{0049C390-F382-4F57-A239-15770C4E63DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CZZYLG_HFT_2021221.WpfClient", "CZZYLG_HFT_2021221.WpfClient\CZZYLG_HFT_2021221.WpfClient.csproj", "{568912FA-7E14-4AEA-A765-33AD83DD5074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZZYLG_HFT_2021221.WpfClient", "CZZYLG_HFT_2021221.WpfClient\CZZYLG_HFT_2021221.WpfClient.csproj", "{568912FA-7E14-4AEA-A765-33AD83DD5074}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
