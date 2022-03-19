@@ -80,5 +80,9 @@ namespace CZZYLG_HFT_2021221.Logic
             repo.Delete(studentId);
         }
 
+        public Student ReadOne(int studentId)
+        {
+            return this.repo.ReadOne(studentId);
+        }
     }
 }

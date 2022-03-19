@@ -60,5 +60,10 @@ namespace CZZYLG_HFT_2021221.Logic
                 repo.Update(teacher);
             }
         }
+
+        public Teacher ReadOne(int teacherId)
+        {
+            return this.repo.ReadOne(teacherId);
+        }
     }
 }

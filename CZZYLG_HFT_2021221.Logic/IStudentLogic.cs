@@ -6,6 +6,7 @@ namespace CZZYLG_HFT_2021221.Logic
     public interface IStudentLogic
     {
         void Create(Student student);
+        Student ReadOne(int studentId);
         IEnumerable<Student> ReadAll();
         void Update(Student student);
         void Delete(int studentId);

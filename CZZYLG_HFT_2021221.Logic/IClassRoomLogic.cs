@@ -6,6 +6,7 @@ namespace CZZYLG_HFT_2021221.Logic
     public interface IClassroomLogic
     {
         void Create(Classroom classroom);
+        Classroom ReadOne(int id);
         IEnumerable<Classroom> ReadAll();
         void Update(Classroom classroom);
         void Delete(int classroomId);

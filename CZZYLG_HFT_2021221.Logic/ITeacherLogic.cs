@@ -7,6 +7,7 @@ namespace CZZYLG_HFT_2021221.Logic
     public interface ITeacherLogic
     {
         void Create(Teacher teacher);
+        Teacher ReadOne(int teacherId);
         IQueryable<Teacher> ReadAll();
         void Update(Teacher teacher);
         void Delete(int teacherId);

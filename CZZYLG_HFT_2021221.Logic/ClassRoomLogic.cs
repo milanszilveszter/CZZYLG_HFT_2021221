@@ -50,6 +50,12 @@ namespace CZZYLG_HFT_2021221.Logic
         {
             return repo.ReadAll();
         }
+
+        public Classroom ReadOne(int id)
+        {
+            return this.repo.ReadOne(id);
+        }
+
         public void Update(Classroom course)
         {
             if (course.Id < 0 || course.ClassroomNumber.Equals(null))
