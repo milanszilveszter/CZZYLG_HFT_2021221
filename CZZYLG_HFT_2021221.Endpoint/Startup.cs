@@ -1,4 +1,5 @@
 using CZZYLG_HFT_2021221.Data;
+using CZZYLG_HFT_2021221.Endpoint.Services;
 using CZZYLG_HFT_2021221.Logic;
 using CZZYLG_HFT_2021221.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +26,8 @@ namespace CZZYLG_HFT_2021221.Endpoint
             services.AddTransient<IClassroomRepository, ClassroomRepository>();
             services.AddTransient<SchoolContext, SchoolContext>();
 
+            services.AddSignalR();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CZZYLG_HFT_2021221.Endpoint", Version = "v1" });
@@ -50,6 +53,7 @@ namespace CZZYLG_HFT_2021221.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

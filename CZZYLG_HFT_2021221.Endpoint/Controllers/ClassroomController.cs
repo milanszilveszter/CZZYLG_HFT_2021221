@@ -1,6 +1,8 @@
-﻿using CZZYLG_HFT_2021221.Logic;
+﻿using CZZYLG_HFT_2021221.Endpoint.Services;
+using CZZYLG_HFT_2021221.Logic;
 using CZZYLG_HFT_2021221.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.Collections.Generic;
 
 namespace CZZYLG_HFT_2021221.Endpoint.Controllers
@@ -10,10 +12,12 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
     public class ClassroomController : ControllerBase
     {
         private IClassroomLogic logic;
+        private readonly IHubContext<SignalRHub> hub;
 
-        public ClassroomController(IClassroomLogic logic)
+        public ClassroomController(IClassroomLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
         [HttpGet]
@@ -23,21 +27,25 @@ namespace CZZYLG_HFT_2021221.Endpoint.Controllers
         }
 
         [HttpPost]
-        public void AddOne([FromBody] Classroom course)
+        public void AddOne([FromBody] Classroom classroom)
         {
-            logic.Create(course);
+            logic.Create(classroom);
+            hub.Clients.All.SendAsync("ClassroomCreated", classroom);
         }
 
         [HttpPut]
-        public void EditOne([FromBody] Classroom course)
+        public void EditOne([FromBody] Classroom classroom)
         {
-            logic.Update(course);
+            logic.Update(classroom);
+            hub.Clients.All.SendAsync("ClassroomUpdated", classroom);
         }
 
-        [HttpDelete("{courseId}")]
-        public void DeleteOne([FromRoute] int courseId)
+        [HttpDelete("{classroomId}")]
+        public void DeleteOne([FromRoute] int classroomId)
         {
-            logic.Delete(courseId);
+            var classroomToDelete = this.logic.ReadOne(classroomId);
+            logic.Delete(classroomId);
+            hub.Clients.All.SendAsync("ClassroomDeleted", classroomToDelete);
         }
     }
 }
