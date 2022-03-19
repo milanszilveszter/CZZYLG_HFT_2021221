@@ -10,24 +10,76 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Label Content="{Binding Name}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <StackPanel Grid.Column="1">
-            <Label Content="Name:" Background="LightBlue" Padding="10"/>
-            <TextBox Text="{Binding SelectedStudent.Name}" Padding="10" Margin="0,0,0,50"/>
-            <Button Content="Create student" Command="{Binding CreateStudentCommand}" Margin="10" Padding="10"/>
-            <Button Content="Delete student" Command="{Binding DeleteStudentCommand}" Margin="10" Padding="10"/>
-            <Button Content="Update student" Command="{Binding UpdateStudentCommand}" Margin="10" Padding="10"/>
-            <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
-        </StackPanel>
+        <TabControl>
+            <TabItem Header="Students">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Name:" Background="LightBlue" Padding="10"/>
+                        <TextBox Text="{Binding SelectedStudent.Name}" Padding="10" Margin="0,0,0,50"/>
+                        <Button Content="Create student" Command="{Binding CreateStudentCommand}" Margin="10" Padding="10"/>
+                        <Button Content="Delete student" Command="{Binding DeleteStudentCommand}" Margin="10" Padding="10"/>
+                        <Button Content="Update student" Command="{Binding UpdateStudentCommand}" Margin="10" Padding="10"/>
+                        <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Teachers">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0" ItemsSource="{Binding Teachers}" SelectedItem="{Binding SelectedTeacher}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Name:" Background="LightPink" Padding="10"/>
+                        <TextBox Text="{Binding SelectedTeacher.Name}" Padding="10" Margin="0,0,0,50"/>
+                        <Button Content="Create teacher" Command="{Binding CreateTeacherCommand}" Margin="10" Padding="10"/>
+                        <Button Content="Delete teacher" Command="{Binding DeleteTeacherCommand}" Margin="10" Padding="10"/>
+                        <Button Content="Update teacher" Command="{Binding UpdateTeacherCommand}" Margin="10" Padding="10"/>
+                        <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Classrooms">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0" ItemsSource="{Binding Classrooms}" SelectedItem="{Binding SelectedClassroom}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding ClassroomNumber}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Name:" Background="LightGreen" Padding="10"/>
+                        <TextBox Text="{Binding SelectedClassroom.ClassroomNumber}" Padding="10" Margin="0,0,0,50"/>
+                        <Button Content="Create classroom" Command="{Binding CreateClassroomCommand}" Margin="10" Padding="10"/>
+                        <Button Content="Delete classroom" Command="{Binding DeleteClassroomCommand}" Margin="10" Padding="10"/>
+                        <Button Content="Update classroom" Command="{Binding UpdateClassroomCommand}" Margin="10" Padding="10"/>
+                        <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
