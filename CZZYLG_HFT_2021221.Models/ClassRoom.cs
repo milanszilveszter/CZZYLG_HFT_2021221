@@ -22,7 +22,7 @@ namespace CZZYLG_HFT_2021221.Models
 
         [NotMapped]
         [JsonIgnore] // NAVIGATION PROP
-        public virtual Teacher Teacher { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
 
         public Classroom()
         {

@@ -34,7 +34,7 @@ namespace CZZYLG_HFT_2021221.Logic
 
 
             return from s in repo.ReadAll()
-                   where s.Classroom.Teacher.Age > 50
+                   where s.Classroom.Teachers.Any(t => t.Age > 50)
                    select s;
 
         }

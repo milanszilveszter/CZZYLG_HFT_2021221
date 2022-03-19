@@ -23,7 +23,7 @@ namespace CZZYLG_HFT_2021221.Logic
         public IEnumerable<Classroom> ClassroomsWithYoungTeachers()
         {
             return from x in repo.ReadAll()
-                   where x.Teacher.Age < 30
+                   where x.Teachers.Any(t => t.Age < 30)
                    select x;
         }
 

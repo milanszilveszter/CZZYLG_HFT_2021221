@@ -43,8 +43,8 @@ namespace CZZYLG_HFT_2021221.Data
             modelBuilder.Entity<Teacher>(entity =>
             {
                 entity.HasOne(t => t.Classroom)
-                    .WithOne(c => c.Teacher)
-                    .HasForeignKey<Teacher>(t => t.ClassroomId)
+                    .WithMany(c => c.Teachers)
+                    .HasForeignKey(t => t.ClassroomId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
