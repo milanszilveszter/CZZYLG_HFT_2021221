@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace CZZYLG_HFT_2021221.Endpoint
 {
@@ -23,6 +24,11 @@ namespace CZZYLG_HFT_2021221.Endpoint
             services.AddTransient<IClassroomLogic, ClassroomLogic>();
             services.AddTransient<IClassroomRepository, ClassroomRepository>();
             services.AddTransient<SchoolContext, SchoolContext>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CZZYLG_HFT_2021221.Endpoint", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,6 +37,8 @@ namespace CZZYLG_HFT_2021221.Endpoint
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CZZYLG_HFT_2021221.Endpoint v1"));
             }
             else
             {
