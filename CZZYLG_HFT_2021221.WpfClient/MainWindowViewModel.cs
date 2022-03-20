@@ -2,11 +2,7 @@
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -29,8 +25,8 @@ namespace CZZYLG_HFT_2021221.WpfClient
         public Student SelectedStudent
         {
             get { return selectedStudent; }
-            set 
-            { 
+            set
+            {
                 if (value != null)
                 {
                     selectedStudent = new Student()
@@ -131,7 +127,7 @@ namespace CZZYLG_HFT_2021221.WpfClient
                     Students.Add(new Student()
                     {
                         Name = SelectedStudent.Name,
-                        ClassroomId= SelectedStudent.ClassroomId,
+                        ClassroomId = SelectedStudent.ClassroomId,
                         Grade = SelectedStudent.Grade
                     });
                 });
