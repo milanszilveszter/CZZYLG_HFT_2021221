@@ -11,12 +11,7 @@
     </Window.DataContext>
     <Grid>
         <TabControl>
-            <TabItem Header="Students" >
-                <TabItem.Resources>
-                    <Style TargetType="{x:Type TabItem}">
-                        <Setter Property="Background" Value="LightBlue"/>
-                    </Style>
-                </TabItem.Resources>
+            <TabItem Header="Students" Background="LightBlue">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -43,12 +38,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Teachers">
-                <TabItem.Resources>
-                    <Style TargetType="{x:Type TabItem}">
-                        <Setter Property="Background" Value="LightPink"/>
-                    </Style>
-                </TabItem.Resources>
+            <TabItem Header="Teachers" Background="LightPink">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -77,12 +67,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Classrooms">
-                <TabItem.Resources>
-                    <Style TargetType="{x:Type TabItem}">
-                        <Setter Property="Background" Value="LightGreen"/>
-                    </Style>
-                </TabItem.Resources>
+            <TabItem Header="Classrooms" Background="LightGreen">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -96,8 +81,8 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Column="1">
-                        <Label Content="Classroom number:" Background="LightGreen" Padding="10"/>
-                        <TextBox Text="{Binding SelectedClassroom.ClassroomNumber}" Padding="10" Margin="0,0,0,50"/>
+                        <Label Content="Classroom number:" Background="LightGreen" Padding="5"/>
+                        <TextBox Text="{Binding SelectedClassroom.ClassroomNumber}" Padding="5" Margin="0,0,0,75"/>
                         <Button Content="Create classroom" Command="{Binding CreateClassroomCommand}" Margin="10" Padding="10"/>
                         <Button Content="Delete classroom" Command="{Binding DeleteClassroomCommand}" Margin="10" Padding="10"/>
                         <Button Content="Update classroom" Command="{Binding UpdateClassroomCommand}" Margin="10" Padding="10"/>
