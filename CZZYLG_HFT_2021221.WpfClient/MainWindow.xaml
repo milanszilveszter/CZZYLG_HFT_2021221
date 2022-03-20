@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CZZYLG_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="StudentEditor" Height="450" Width="800">
+        Title="StudentEditor" Height="480" Width="800">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
@@ -30,8 +30,12 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Column="1">
-                        <Label Content="Name:" Background="LightBlue" Padding="10"/>
-                        <TextBox Text="{Binding SelectedStudent.Name}" Padding="10" Margin="0,0,0,50"/>
+                        <Label Content="Name:" Background="LightBlue" Padding="5"/>
+                        <TextBox Text="{Binding SelectedStudent.Name}" Padding="5" Margin="0,0,0,0"/>
+                        <Label Content="Classroom id:" Background="LightBlue" Padding="5"/>
+                        <TextBox Text="{Binding SelectedStudent.ClassroomId}" Padding="5" Margin="0,0,0,0"/>
+                        <Label Content="Grade:" Background="LightBlue" Padding="5"/>
+                        <TextBox Text="{Binding SelectedStudent.Grade}" Padding="5" Margin="0,0,0,30"/>
                         <Button Content="Create student" Command="{Binding CreateStudentCommand}" Margin="10" Padding="10"/>
                         <Button Content="Delete student" Command="{Binding DeleteStudentCommand}" Margin="10" Padding="10"/>
                         <Button Content="Update student" Command="{Binding UpdateStudentCommand}" Margin="10" Padding="10"/>
@@ -58,8 +62,14 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Column="1">
-                        <Label Content="Name:" Background="LightPink" Padding="10"/>
-                        <TextBox Text="{Binding SelectedTeacher.Name}" Padding="10" Margin="0,0,0,50"/>
+                        <Label Content="Name:" Background="LightPink" Padding="5"/>
+                        <TextBox Text="{Binding SelectedTeacher.Name}" Padding="5" Margin="0,0,0,0"/>
+                        <Label Content="Age:" Background="LightPink" Padding="5"/>
+                        <TextBox Text="{Binding SelectedTeacher.Age}" Padding="5" Margin="0,0,0,0"/>
+                        <Label Content="Subject:" Background="LightPink" Padding="5"/>
+                        <TextBox Text="{Binding SelectedTeacher.Subject}" Padding="5" Margin="0,0,0,0"/>
+                        <Label Content="Classroom id:" Background="LightPink" Padding="5"/>
+                        <TextBox Text="{Binding SelectedTeacher.ClassroomId}" Padding="5" Margin="0,0,0,10"/>
                         <Button Content="Create teacher" Command="{Binding CreateTeacherCommand}" Margin="10" Padding="10"/>
                         <Button Content="Delete teacher" Command="{Binding DeleteTeacherCommand}" Margin="10" Padding="10"/>
                         <Button Content="Update teacher" Command="{Binding UpdateTeacherCommand}" Margin="10" Padding="10"/>
@@ -86,7 +96,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Column="1">
-                        <Label Content="Name:" Background="LightGreen" Padding="10"/>
+                        <Label Content="Classroom number:" Background="LightGreen" Padding="10"/>
                         <TextBox Text="{Binding SelectedClassroom.ClassroomNumber}" Padding="10" Margin="0,0,0,50"/>
                         <Button Content="Create classroom" Command="{Binding CreateClassroomCommand}" Margin="10" Padding="10"/>
                         <Button Content="Delete classroom" Command="{Binding DeleteClassroomCommand}" Margin="10" Padding="10"/>
