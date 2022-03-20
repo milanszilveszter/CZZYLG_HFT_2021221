@@ -22,7 +22,7 @@ namespace CZZYLG_HFT_2021221.Test
             {
                 Id = 1,
                 ClassroomNumber = "AAA",
-                Teacher = new Teacher() { Id = 1, Name = "Tanár1", Age = 51 },
+                Teachers = new List<Teacher>() { new Teacher() { Id = 1, Name = "Tanár1", Age = 51} },
                 Students = new List<Student>()
             {
                 new Student() { Id = 1, Name = "Diak1", Grade = 3.25, ClassroomId = 1 },
@@ -33,7 +33,7 @@ namespace CZZYLG_HFT_2021221.Test
             {
                 Id = 2,
                 ClassroomNumber = "BBB",
-                Teacher = new Teacher() { Id = 2, Name = "Tanár2", Age = 60 },
+                Teachers = new List<Teacher>() { new Teacher() { Id = 2, Name = "Tanár2", Age = 60 } },
                 Students = new List<Student>()
             {
                 new Student() { Id = 3, Name = "Diak3", Grade = 3.5, ClassroomId = 2 },
@@ -45,7 +45,7 @@ namespace CZZYLG_HFT_2021221.Test
             {
                 Id = 3,
                 ClassroomNumber = "CCC",
-                Teacher = new Teacher() { Id = 3, Name = "Tanár3", Age = 28 },
+                Teachers = new List<Teacher>() { new Teacher() { Id = 3, Name = "Tanár3", Age = 28 } },
                 Students = new List<Student>()
             {
                 new Student() { Id = 6, Name = "Diak6", Grade = 3, ClassroomId = 3 }
@@ -55,7 +55,7 @@ namespace CZZYLG_HFT_2021221.Test
             {
                 Id = 4,
                 ClassroomNumber = "DDD",
-                Teacher = new Teacher() { Id = 4, Name = "Tanár4", Age = 44 },
+                Teachers = new List<Teacher>() { new Teacher() { Id = 4, Name = "Tanár4", Age = 44 } },
                 Students = new List<Student>()
             {
                 new Student() { Id = 7, Name = "Diak7", Grade = 1.2, ClassroomId = 4 },

@@ -38,7 +38,10 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Id = 1,
                         ClassroomNumber = "111",
-                        Teacher = t1,
+                        Teachers = new List<Teacher>()
+                        {
+                            t1
+                        },
                         Students = new List<Student>()
                         {
                             s1
@@ -48,7 +51,10 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Id = 2,
                         ClassroomNumber = "222",
-                        Teacher = t2,
+                        Teachers = new List<Teacher>()
+                        {
+                            t2
+                        },
                         Students = new List<Student>()
                         {
                             s2, s3
@@ -58,7 +64,10 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Id = 3,
                         ClassroomNumber = "333",
-                        Teacher = t3,
+                        Teachers = new List<Teacher>()
+                        {
+                            t3
+                        },
                         Students = new List<Student>()
                         {
                             s4, s5, s6
@@ -68,7 +77,10 @@ namespace CZZYLG_HFT_2021221.Test
                     {
                         Id = 4,
                         ClassroomNumber = "444",
-                        Teacher = t4,
+                        Teachers = new List<Teacher>()
+                        {
+                            t4
+                        },
                         Students = new List<Student>()
                         {
                             s7

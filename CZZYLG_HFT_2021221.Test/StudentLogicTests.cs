@@ -18,10 +18,10 @@ namespace CZZYLG_HFT_2021221.Test
         {
             Mock<IStudentRepository> mockStudentRepo = new Mock<IStudentRepository>();
 
-            Classroom cr1 = new Classroom() { Id = 1, ClassroomNumber = "AAA", Teacher = new Teacher() { Id = 1, Name = "Tanár1", Age = 51 } };
-            Classroom cr2 = new Classroom() { Id = 2, ClassroomNumber = "BBB", Teacher = new Teacher() { Id = 2, Name = "Tanár2", Age = 60 } };
-            Classroom cr3 = new Classroom() { Id = 3, ClassroomNumber = "CCC", Teacher = new Teacher() { Id = 3, Name = "Tanár3", Age = 28 } };
-            Classroom cr4 = new Classroom() { Id = 4, ClassroomNumber = "DDD", Teacher = new Teacher() { Id = 4, Name = "Tanár4", Age = 44 } };
+            Classroom cr1 = new Classroom() { Id = 1, ClassroomNumber = "AAA", Teachers = new List<Teacher>() { new Teacher() { Id = 1, Name = "Tanï¿½r1", Age = 51 } } };
+            Classroom cr2 = new Classroom() { Id = 2, ClassroomNumber = "BBB", Teachers = new List<Teacher>() { new Teacher() { Id = 2, Name = "Tanï¿½r2", Age = 60 } } };
+            Classroom cr3 = new Classroom() { Id = 3, ClassroomNumber = "CCC", Teachers = new List<Teacher>() { new Teacher() { Id = 3, Name = "Tanï¿½r3", Age = 28 } } };
+            Classroom cr4 = new Classroom() { Id = 4, ClassroomNumber = "DDD", Teachers = new List<Teacher>() { new Teacher() { Id = 4, Name = "Tanï¿½r4", Age = 44 } } };
 
             mockStudentRepo
                 .Setup(x => x.ReadAll())
