@@ -1,5 +1,5 @@
 ﻿let students = [];
-let connection;
+let connection = null;
 
 let studentIdToUpdate = -1;
 
@@ -13,20 +13,21 @@ function setupSignalR() {
         .build();
 
     connection.on("StudentCreated", (user, message) => {
-        getdata();
+        fetchData();
     });
 
     connection.on("StudentDeleted", (user, message) => {
-        getdata();
+        fetchData();
     });
 
     connection.on("StudentUpdated", (user, message) => {
-        getdata();
+        fetchData();
     });
 
     connection.onclose(async () => {
         await start();
     });
+
     start();
 }
 
@@ -48,6 +49,7 @@ async function fetchData() {
             display();
         });
 }
+
 function display() {
     document.getElementById('resultarea').innerHTML = ""
     students.forEach(t => {
@@ -84,6 +86,7 @@ function create() {
             console.error('Error:', error);
         });   
 }
+
 function remove(id) {
     fetch('http://localhost:49692/student/' + id, {
         method: 'DELETE',
@@ -101,6 +104,7 @@ function remove(id) {
             console.error('Error:', error);
         });
 }
+
 function showupdate(id) {
     document.getElementById('updateformdiv').style.display = 'flex';
     document.getElementById('studentnametoupdate').value = students.find(t => t['id'] == id)['name'];
@@ -108,6 +112,7 @@ function showupdate(id) {
     document.getElementById('stud_classroomidtoupdate').value = students.find(t => t['id'] == id)['classroomId'];
     studentIdToUpdate = id;
 }
+
 function update() {
     document.getElementById('updateformdiv').style.display = 'none';
 
