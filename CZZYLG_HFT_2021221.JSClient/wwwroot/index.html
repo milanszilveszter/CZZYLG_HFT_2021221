@@ -1,6 +1,45 @@
-﻿namespace CZZYLG_HFT_2021221.JSClient.wwwroot
-{
-    public class index
-    {
-    }
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Student</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Students</h1>
+    <div id="formdiv">
+        <label>Student Name</label>
+        <input type="text" id="studentname" />
+        <label>Grade</label>
+        <input type="number" id="studentgrade" />
+        <label>Classroom id</label>
+        <input type="number" id="stud_classroomid" />
+        <button type="button" onclick="create()">Add Student</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Student Name</label>
+        <input type="text" id="studentnametoupdate" />
+        <label>Grade</label>
+        <input type="number" id="studentgradetoupdate" />
+        <label>Classroom id</label>
+        <input type="number" id="stud_classroomidtoupdate" />
+        <button type="button" onclick="update()">Update Student</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

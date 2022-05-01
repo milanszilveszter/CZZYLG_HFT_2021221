@@ -26,8 +26,8 @@ namespace CZZYLG_HFT_2021221.JSClient
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
             app.UseStaticFiles();
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
